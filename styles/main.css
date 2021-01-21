@@ -1,0 +1,26 @@
+body {
+    margin: 4rem 0 0 0;
+    padding: 0;
+    width: 100vw;
+    /*🏞🔥 Background by SVGBackgrounds.com 🔥🏞 */
+    background: url(/images/Scattered-Forcefields.svg);
+    background-attachment: fixed;
+}
+
+.hidden {
+    visibility: hidden;
+    position: absolute;
+}
+
+.input-field {
+    background: #f3f3f3c9;
+    color: rgb(73, 73, 73);
+    backdrop-filter: blur(3px);
+    border: none;
+    border-radius: .6rem;
+    outline: none;
+    height: 3rem;
+    width: 16rem;
+    padding-left: .5rem;
+    font-weight: 1rem;
+}

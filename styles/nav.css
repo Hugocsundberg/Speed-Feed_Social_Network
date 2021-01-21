@@ -1,0 +1,98 @@
+/* Hamburger */
+.hamburger {
+    position: absolute;
+    top: 1rem;
+    right: .5rem;
+    height: 2rem;
+    width: 2rem;
+}
+
+.hamburger-icon {
+    background: url(../assets/radix-icons_hamburger-menu.svg);
+    background-repeat: none;
+    background-position: center;
+    background-size: contain;
+    transition: 1s;
+    z-index: 2100;
+    border: none;
+}
+
+
+.hamburger-menu {
+    overflow: hidden;
+    position: absolute;
+    background:#26262600;
+    border-radius: 50%;
+    transition: .7s;
+    transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1)(0.075, 0.82, 0.165, 1);
+    z-index: 20;
+}
+
+.hamburger_expanded {
+    position: absolute;
+    background: rgba(255, 0, 0, 0.781);
+    backdrop-filter: blur(10px);
+    height: 100%;
+    width: 100%;
+    border-radius: 0px;
+    transition: .7s;
+    transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1)(0.075, 0.82, 0.165, 1);
+    top: 0;
+    right: 0;
+}
+
+.hamburger_text_container h1 {
+    font-family: Helvetica;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 42px;
+    line-height: 27px;
+    margin-left: 37px;
+    margin-top: 3rem;
+
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+.hamburger_text_container p {
+    font-family: Helvetica;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 27px;
+    margin-left: 37px;
+}
+
+.hamburger_text_container {
+    margin-top: 10rem;
+}
+
+/* Logo */
+.logo {
+    position: absolute;
+    top: .5rem;
+    left: .5rem;
+    width: 7rem;
+
+}
+
+.sort-by {
+    background: #0085FF;
+    border-radius: 50rem;
+    color: white;
+    text-align: center;
+    margin-left: 1rem;
+    outline: none;
+    border: none;
+    padding: .2rem .4rem;
+    box-shadow: 0px 0px 51px -17px rgba(0,133,255,1);
+}
+
+
+
+
+
+
