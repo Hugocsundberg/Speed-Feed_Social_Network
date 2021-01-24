@@ -15,12 +15,18 @@ logMessage();
 
 //Fetch posts from database
 //Connect to db
-$db = new PDO('sqlite:hacker_news_database.sqlite3');
+$database_host = 'ec2-34-251-118-151.eu-west-1.compute.amazonaws.com';
+$database_name = 'd2m7cahbqat10u';
+$database_user = 'ibmysphorhuxnp';
+$database_port = '5432';
+$database_password = '17d71d5877ce8f94d8d912acdc727e8dd69d290548b93a22d0bc8c0b9b07489f';
+
+$db = new PDO("pgsql:host=$database_host;port=$database_port;dbname=$database_name;user=$database_user;password=$database_password");
 
 
 if (isset($_SESSION['user'])) {
     $userId = $_SESSION['user']['id'];
-    $stmt = $db->prepare("SELECT sort_by FROM Users where id = :userId");
+    $stmt = $db->prepare("SELECT \"sort_by\" FROM \"Users\" where \"id\" = :userId");
     $stmt->bindParam(':userId', $userId);
     $stmt->execute();
     $data = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -35,9 +41,9 @@ if (isset($_SESSION['user'])) {
 
 $result;
 if ($sort_by === 'new') {
-    $result = $db->query("SELECT * FROM Posts ORDER BY \"date\" DESC LIMIT 30");
+    $result = $db->query("SELECT * FROM \"Posts\" ORDER BY \"date\" DESC LIMIT 30");
 } else if ($sort_by === 'mostupvoted') {
-    $result = $db->query("SELECT id, user_id, header, body, date, link, ifnull((select sum(up_down) from likes where posts.id=likes.post_id), 0) AS antallikes FROM Posts ORDER BY antallikes DESC LIMIT 30");
+    $result = $db->query("SELECT \"id\", \"user_id\", \"header\", \"body\", \"date\", \"link\", COALESCE((SELECT sum(\"up_down\") FROM \"Likes\" where \"Posts\".\"id\"=\"Likes\".\"post_id\"), 0) AS \"antallikes\" FROM \"Posts\" ORDER BY \"antallikes\" DESC LIMIT 30;");
 }
 
 $posts = $result->fetchAll(PDO::FETCH_ASSOC);
@@ -90,25 +96,25 @@ $posts = $result->fetchAll(PDO::FETCH_ASSOC);
 
 
         //Fetch all comments on post
-        $commentResult = $db->query("SELECT * FROM Comments WHERE post_id = $postId");
+        $commentResult = $db->query("SELECT * FROM \"Comments\" WHERE post_id = $postId");
         $comments = $commentResult->fetchAll(PDO::FETCH_ASSOC);
 
         //Fetch likes on post
-        $likesResult = $db->query("SELECT COUNT(user_id) AS 'likes' FROM Likes WHERE post_id = $postId AND up_down = 1");
+        $likesResult = $db->query("SELECT COUNT(\"user_id\") AS \"likes\" FROM \"Likes\" WHERE \"post_id\" = $postId AND up_down = 1");
         $likes = $likesResult->fetch(PDO::FETCH_ASSOC)['likes'];
 
 
 
 
         //Fetch dislikes
-        $dislikeResult = $db->query("SELECT COUNT(user_id) AS 'dislikes' FROM Likes WHERE post_id = $postId AND up_down = -1");
+        $dislikeResult = $db->query("SELECT COUNT(user_id) AS \"dislikes\" FROM \"Likes\" WHERE \"post_id\" = $postId AND \"up_down\" = -1");
         $dislikes = $dislikeResult->fetch(PDO::FETCH_ASSOC)['dislikes'];
 
         $LikesSum = $likes - $dislikes;
 
         //Fetch user from database
         $postUserId = $post['user_id'];
-        $result = $db->query("SELECT * FROM Users WHERE id = $postUserId");
+        $result = $db->query("SELECT * FROM \"Users\" WHERE \"id\" = $postUserId");
         $user = $result->fetch(PDO::FETCH_ASSOC);
         isset($user['avatar_path']) ? $avatarPath = $user['avatar_path'] : $avatarPath = '/Account/uploads/default.svg';
 
@@ -176,14 +182,14 @@ $posts = $result->fetchAll(PDO::FETCH_ASSOC);
         <?php foreach ($comments as $comment) : ?>
             <?php
             $commenter_id = $comment['user_id'];
-            $result = $db->query("SELECT name FROM Users WHERE id = $commenter_id");
+            $result = $db->query("SELECT \"name\" FROM \"Users\" WHERE \"id\" = $commenter_id");
             $data = $result->fetch(PDO::FETCH_ASSOC);
             $commenter_name = $data['name'];
             $commentId = $comment['id'];
 
             //Fetch commenter
             $commenterId = $comment['user_id'];
-            $result = $db->query("SELECT * FROM Users WHERE id = $commenterId");
+            $result = $db->query("SELECT * FROM \"Users\" WHERE \"id\" = $commenterId");
             $commenter = $result->fetch(PDO::FETCH_ASSOC);
             $commentImageURL = $commenter['avatar_path'];
             isset($commenter['avatar_path']) ? $commentImageURL = $commenter['avatar_path'] : $commentImageURL = '/Account/uploads/default.svg';
