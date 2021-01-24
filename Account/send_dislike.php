@@ -7,13 +7,19 @@ $postId = json_decode(file_get_contents('php://input'))->post_id;
 $response = new stdClass();
 
 //Connect to db 
-$db = new PDO('sqlite:../hacker_news_database.sqlite3');
+$database_host = 'ec2-34-251-118-151.eu-west-1.compute.amazonaws.com';
+$database_name = 'd2m7cahbqat10u';
+$database_user = 'ibmysphorhuxnp';
+$database_port = '5432';
+$database_password = '17d71d5877ce8f94d8d912acdc727e8dd69d290548b93a22d0bc8c0b9b07489f';
 
-$likesResult = $db->query("SELECT COUNT(user_id) AS 'likes' FROM Likes WHERE post_id = $postId AND up_down = 1");
+$db = new PDO("pgsql:host=$database_host;port=$database_port;dbname=$database_name;user=$database_user;password=$database_password");
+
+$likesResult = $db->query("SELECT COUNT(\"user_id\") AS \"likes\" FROM \"Likes\" WHERE \"post_id\" = $postId AND \"up_down\" = 1");
 $likes = $likesResult->fetch(PDO::FETCH_ASSOC)['likes'];
 
 //Fetch dislikes
-$dislikeResult = $db->query("SELECT COUNT(user_id) AS 'dislikes' FROM Likes WHERE post_id = $postId AND up_down = 0");
+$dislikeResult = $db->query("SELECT COUNT(\"user_id\") AS \"dislikes\" FROM \"Likes\" WHERE \"post_id\" = $postId AND \"up_down\" = 0");
 $dislikes = $dislikeResult->fetch(PDO::FETCH_ASSOC)['dislikes'];
 
 $LikesSum = $likes - $dislikes;
@@ -22,11 +28,11 @@ $LikesSum = $likes - $dislikes;
 if (!isset($_SESSION['user'])) {
     //Send response to frontned
     //Fetch likes on post
-    $likesResult = $db->query("SELECT COUNT(user_id) AS 'likes' FROM Likes WHERE post_id = $postId AND up_down = 1");
+    $likesResult = $db->query("SELECT COUNT(\"user_id\") AS \"likes\" FROM \"Likes\" WHERE \"post_id\" = $postId AND \"up_down\" = 1");
     $likes = $likesResult->fetch(PDO::FETCH_ASSOC)['likes'];
 
     //Fetch dislikes
-    $dislikeResult = $db->query("SELECT COUNT(user_id) AS 'dislikes' FROM Likes WHERE post_id = $postId AND up_down = -1");
+    $dislikeResult = $db->query("SELECT COUNT(\"user_id\") AS \"dislikes\" FROM \"Likes\" WHERE \"post_id\" = $postId AND \"up_down\" = -1");
     $dislikes = $dislikeResult->fetch(PDO::FETCH_ASSOC)['dislikes'];
 
     $LikesSum = $likes - $dislikes;
@@ -44,20 +50,20 @@ if (!isset($_SESSION['user'])) {
 $user_id = $_SESSION['user']['id'];
 
 //Check previous downvoted
-$getLikes = $db->query("SELECT * from Likes WHERE user_id = $user_id AND post_id = $postId");
+$getLikes = $db->query("SELECT * from \"Likes\" WHERE \"user_id\" = $user_id AND \"post_id\" = $postId");
 $getLikes_result = $getLikes->fetch(PDO::FETCH_ASSOC);
 
 if (isset($getLikes_result['id']) && $getLikes_result['up_down'] === '-1') {  //Already downvoted post
     //Remove downvote from db 
-    $db->query("DELETE FROM Likes WHERE user_id = $user_id AND post_id = $postId;");
+    $db->query("DELETE FROM \"Likes\" WHERE \"user_id\" = $user_id AND \"post_id\" = $postId");
 
     //Send response to frontned
     //Fetch likes on post
-    $likesResult = $db->query("SELECT COUNT(user_id) AS 'likes' FROM Likes WHERE post_id = $postId AND up_down = 1");
+    $likesResult = $db->query("SELECT COUNT(\"user_id\") AS \"likes\" FROM \"Likes\" WHERE \"post_id\" = $postId AND \"up_down\" = 1");
     $likes = $likesResult->fetch(PDO::FETCH_ASSOC)['likes'];
 
     //Fetch dislikes
-    $dislikeResult = $db->query("SELECT COUNT(user_id) AS 'dislikes' FROM Likes WHERE post_id = $postId AND up_down = -1");
+    $dislikeResult = $db->query("SELECT COUNT(\"user_id\") AS \"dislikes\" FROM \"Likes\" WHERE \"post_id\" = $postId AND \"up_down\" = -1");
     $dislikes = $dislikeResult->fetch(PDO::FETCH_ASSOC)['dislikes'];
 
     $LikesSum = $likes - $dislikes;
@@ -74,7 +80,7 @@ if (isset($getLikes_result['id']) && $getLikes_result['up_down'] === '-1') {  //
 
     //Send downvote to db 
     $like = -1;
-    $stmt = $db->prepare("INSERT INTO Likes (user_id, post_id, up_down) VALUES (:user_id, :post_id, :up_down)");
+    $stmt = $db->prepare("INSERT INTO \"Likes\" (\"user_id\", \"post_id\", \"up_down\") VALUES (:user_id, :post_id, :up_down)");
     $stmt->bindParam(':user_id', $user_id);
     $stmt->bindParam(':post_id', $postId);
     $stmt->bindParam(':up_down', $like);
@@ -82,11 +88,11 @@ if (isset($getLikes_result['id']) && $getLikes_result['up_down'] === '-1') {  //
 
     //Send response to frontned
     //Fetch likes on post
-    $likesResult = $db->query("SELECT COUNT(user_id) AS 'likes' FROM Likes WHERE post_id = $postId AND up_down = 1");
+    $likesResult = $db->query("SELECT COUNT(\"user_id\") AS \"likes\" FROM \"Likes\" WHERE \"post_id\" = $postId AND \"up_down\" = 1");
     $likes = $likesResult->fetch(PDO::FETCH_ASSOC)['likes'];
 
     //Fetch dislikes
-    $dislikeResult = $db->query("SELECT COUNT(user_id) AS 'dislikes' FROM Likes WHERE post_id = $postId AND up_down = -1");
+    $dislikeResult = $db->query("SELECT COUNT(\"user_id\") AS \"dislikes\" FROM \"Likes\" WHERE \"post_id\" = $postId AND \"up_down\" = -1");
     $dislikes = $dislikeResult->fetch(PDO::FETCH_ASSOC)['dislikes'];
 
     $LikesSum = $likes - $dislikes;
@@ -101,11 +107,11 @@ if (isset($getLikes_result['id']) && $getLikes_result['up_down'] === '-1') {  //
 }
 if (isset($getLikes_result['id']) && $getLikes_result['up_down'] === '1') { //Post previously liked
     //remove previous like
-    $db->query("DELETE FROM Likes WHERE user_id = $user_id AND post_id = $postId;");
+    $db->query("DELETE FROM \"Likes\" WHERE \"user_id\" = $user_id AND \"post_id\" = $postId;");
 
     //Send dislike to db 
     $like = -1;
-    $stmt = $db->prepare("INSERT INTO Likes (user_id, post_id, up_down) VALUES (:user_id, :post_id, :up_down)");
+    $stmt = $db->prepare("INSERT INTO \"Likes\" (\"user_id\", \"post_id\", \"up_down\") VALUES (:user_id, :post_id, :up_down)");
     $stmt->bindParam(':user_id', $user_id);
     $stmt->bindParam(':post_id', $postId);
     $stmt->bindParam(':up_down', $like);
@@ -113,11 +119,11 @@ if (isset($getLikes_result['id']) && $getLikes_result['up_down'] === '1') { //Po
 
     //Send response to frontend
     //Fetch likes on post
-    $likesResult = $db->query("SELECT COUNT(user_id) AS 'likes' FROM Likes WHERE post_id = $postId AND up_down = 1");
+    $likesResult = $db->query("SELECT COUNT(\"user_id\") AS \"likes\" FROM \"Likes\" WHERE \"post_id\" = $postId AND \"up_down\" = 1");
     $likes = $likesResult->fetch(PDO::FETCH_ASSOC)['likes'];
 
     //Fetch dislikes
-    $dislikeResult = $db->query("SELECT COUNT(user_id) AS 'dislikes' FROM Likes WHERE post_id = $postId AND up_down = -1");
+    $dislikeResult = $db->query("SELECT COUNT(\"user_id\") AS \"dislikes\" FROM \"Likes\" WHERE \"post_id\" = $postId AND \"up_down\" = -1");
     $dislikes = $dislikeResult->fetch(PDO::FETCH_ASSOC)['dislikes'];
 
     $LikesSum = $likes - $dislikes;

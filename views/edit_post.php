@@ -17,7 +17,7 @@ $body = $_GET['body'];
 $link = $_GET['link'];
 
 //Database connection
-$db = new PDO('sqlite:../hacker_news_database.sqlite3');
+// $db = new PDO('sqlite:../hacker_news_database.sqlite3');
 ?>
 <form action="/Account/update_post.php" method="post">
     <div class="post">
