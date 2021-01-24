@@ -18,7 +18,7 @@ $db = new PDO("pgsql:host=$database_host;port=$database_port;dbname=$database_na
 if (!$_SESSION['user']) {
     redirect('/views/login.php');
 } else {
-    $result = $db->query("SELECT * FROM \"USERS\" WHERE \"id\" = $userId");
+    $result = $db->query("SELECT * FROM \"Users\" WHERE \"id\" = $userId");
     $userData = $result->fetch(PDO::FETCH_ASSOC);
     $_SESSION['user'] = $userData;
 }

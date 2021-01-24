@@ -72,7 +72,7 @@ $posts = $result->fetchAll(PDO::FETCH_ASSOC);
         $downvoteImage = '/images/downvote.svg';
 
         if (isset($_SESSION['user'])) {
-            $hasLikedResult = $db->query("SELECT * FROM Likes WHERE post_id = $postId AND user_id = $userId AND up_down = 1");
+            $hasLikedResult = $db->query("SELECT * FROM \"Likes\" WHERE \"post_id\" = $postId AND \"user_id\" = $userId AND \"up_down\" = 1");
             $hasLikedData = $hasLikedResult->fetch(PDO::FETCH_ASSOC);
             if (isset($hasLikedData['id'])) {
                 $hasLiked = true;
@@ -82,7 +82,7 @@ $posts = $result->fetchAll(PDO::FETCH_ASSOC);
                 $upvoteImage = '/images/upvote.svg';
             }
 
-            $hasDislikedResult = $db->query("SELECT id FROM Likes WHERE post_id = $postId AND user_id = $userId AND up_down = -1");
+            $hasDislikedResult = $db->query("SELECT \"id\" FROM \"Likes\" WHERE \"post_id\" = $postId AND \"user_id\" = $userId AND \"up_down\" = -1");
             $hasDislikedData = $hasDislikedResult->fetch(PDO::FETCH_ASSOC);
             if (isset($hasDislikedData['id'])) {
                 $hasDisliked = true;
@@ -91,16 +91,19 @@ $posts = $result->fetchAll(PDO::FETCH_ASSOC);
                 $hasDisliked = false;
                 $downvoteImage = '/images/downvote.svg';
             }
+        } else {
+            $hasLiked = false;
+            $hasDisliked = false;
         }
 
 
 
         //Fetch all comments on post
-        $commentResult = $db->query("SELECT * FROM \"Comments\" WHERE post_id = $postId");
+        $commentResult = $db->query("SELECT * FROM \"Comments\" WHERE \"post_id\" = $postId");
         $comments = $commentResult->fetchAll(PDO::FETCH_ASSOC);
 
         //Fetch likes on post
-        $likesResult = $db->query("SELECT COUNT(\"user_id\") AS \"likes\" FROM \"Likes\" WHERE \"post_id\" = $postId AND up_down = 1");
+        $likesResult = $db->query("SELECT COUNT(\"user_id\") AS \"likes\" FROM \"Likes\" WHERE \"post_id\" = $postId AND \"up_down\" = 1");
         $likes = $likesResult->fetch(PDO::FETCH_ASSOC)['likes'];
 
 
@@ -184,19 +187,17 @@ $posts = $result->fetchAll(PDO::FETCH_ASSOC);
             $commenter_id = $comment['user_id'];
             $result = $db->query("SELECT \"name\" FROM \"Users\" WHERE \"id\" = $commenter_id");
             $data = $result->fetch(PDO::FETCH_ASSOC);
-            $commenter_name = $data['name'];
             $commentId = $comment['id'];
 
             //Fetch commenter
             $commenterId = $comment['user_id'];
             $result = $db->query("SELECT * FROM \"Users\" WHERE \"id\" = $commenterId");
             $commenter = $result->fetch(PDO::FETCH_ASSOC);
-            $commentImageURL = $commenter['avatar_path'];
             isset($commenter['avatar_path']) ? $commentImageURL = $commenter['avatar_path'] : $commentImageURL = '/Account/uploads/default.svg';
 
             //If user has a name, set it to $userName
-            if (isset($commenter['name'])) {
-                $commenter_name = $commenter['name'];
+            if (isset($data['name'])) {
+                $commenter_name = $data['name'];
             } else {
                 $commenter_name = 'IHaveNoName';
             }

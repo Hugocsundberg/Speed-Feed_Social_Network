@@ -5,7 +5,7 @@
     <div class="hamburger-icon hamburger center-contain"></div>
     <div class="hamburger-menu hamburger">
         <div class="hamburger_text_container">
-            <a href="index.php">
+            <a href="/index.php">
                 <h1>Start</h1>
             </a>
             <?php
@@ -25,7 +25,7 @@
             <?php endif ?>
             <?php
             if (isset($_SESSION['user'])) : ?>
-                <a href="/Account/logout.php">
+                <a href="/account/logout.php">
                     <h1>Logout</h1>
                 </a>
             <?php endif ?>

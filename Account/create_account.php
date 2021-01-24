@@ -22,13 +22,13 @@ if (isset($data['email'])) { //Email already exists
     redirect('../views/login.php');
 } else {  //Email is available
     //Export new user to database
-    $stmt = $db->prepare('INSERT INTO \"Users\" (\"email\", \"password_hash\", \"sort_by\")
-    VALUES(:email, :password_hash, :sort_by)');
+    $stmt = $db->prepare("INSERT INTO \"Users\" (email, password_hash, sort_by)  
+    VALUES(:email, :password_hash, :sort_by)");
 
     $stmt->bindParam(':email', $email);
     $stmt->bindParam(':password_hash', $password_hash);
     $stmt->bindParam(':sort_by', $new);
     $stmt->execute();
     createMessage(2, 'Account has been created');
-    redirect(__DIR__ . '/../views/login.php');
+    redirect('/../views/login.php');
 }
