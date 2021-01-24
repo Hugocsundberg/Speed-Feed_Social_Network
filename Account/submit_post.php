@@ -35,4 +35,4 @@ $statement->bindParam(':date', $dateNow);
 $statement->bindParam(':link', $link);
 $statement->execute();
 
-redirect('/views/index.php');
+redirect('/index.php');

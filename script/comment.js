@@ -9,7 +9,7 @@ const submitComment = (e) => {
         value: value
     }
 
-    window.fetch('../Account/comment.php', {
+    window.fetch('../account/comment.php', {
         body: JSON.stringify(JSONBody),
         method: 'post'
     }).then(response => response.text())
@@ -22,7 +22,7 @@ const submitComment = (e) => {
 
 const newComment = (e) => {
     //Check if logged in 
-    window.fetch('../Account/isLoggedIn.php', {
+    window.fetch('../account/is_logged_in.php', {
         method: 'post',
         credentials: 'include'
     }).then(response => response.json())
@@ -68,7 +68,7 @@ const deleteComment = (e) => {
         commentId: commentId
     }
 
-    window.fetch('../Account/delete_comment.php', {
+    window.fetch('../account/delete_comment.php', {
         body: JSON.stringify(JSONBody),
         method: 'post',
         credentials: 'include'

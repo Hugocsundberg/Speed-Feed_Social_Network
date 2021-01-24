@@ -1,7 +1,7 @@
 <?php
 require('../functions.php');
 require('header.php');
-require('./nav.php');
+require('nav.php');
 logMessage();
 
 if (isset($_SESSION['user']['name'])) {
@@ -13,7 +13,7 @@ if (isset($_SESSION['user']['name'])) {
 //Database connection
 $db = new PDO('sqlite:../hacker_news_database.sqlite3');
 ?>
-<form action="/Account/submit_post.php" method="post">
+<form action="/account/submit_post.php" method="post">
     <div class="post">
         <div class="date-section">
             <div class="left">
@@ -52,6 +52,6 @@ $db = new PDO('sqlite:../hacker_news_database.sqlite3');
     <input type="submit" value="Post">
 </form>
 <script src="../script/hamburger.js"></script>
-<script src="../script/imageUpload.js"></script>
+<script src="../script/image_upload.js"></script>
 
 <?php createMessage(3) ?>

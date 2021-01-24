@@ -25,5 +25,5 @@ if (isset($data['email'])) { //Email already exists
     $stmt->bindParam(':sort_by', $new);
     $stmt->execute();
     createMessage(2, 'Account has been created');
-    redirect('../views/login.php');
+    redirect(__DIR__ . '/../views/login.php');
 }

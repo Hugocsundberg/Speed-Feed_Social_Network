@@ -5,7 +5,7 @@
     <div class="hamburger-icon hamburger center-contain"></div>
     <div class="hamburger-menu hamburger">
         <div class="hamburger_text_container">
-            <a href="/views/index.php">
+            <a href="index.php">
                 <h1>Start</h1>
             </a>
             <?php

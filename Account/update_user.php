@@ -15,12 +15,8 @@ $user_id = $_SESSION['user']['id'];
 //db connection
 $db = new PDO('sqlite:../hacker_news_database.sqlite3');
 
-
-
-
-
 //Image
-if (isset($_FILES['file'])) {
+if ($_FILES['file']['size'] > 0) {
 
     //File proporties
     $file_name = $_FILES['file']['name'];
