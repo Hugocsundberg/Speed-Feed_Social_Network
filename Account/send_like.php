@@ -105,7 +105,7 @@ if (isset($getLikes_result['id']) && $getLikes_result['up_down'] === 1) {  //Pos
     die();
     //No like or dislike on post
 }
-if (isset($getLikes_result['id']) && $getLikes_result['up_down'] === '-1') {
+if (isset($getLikes_result['id']) && $getLikes_result['up_down'] === -1) {
     //remove previous dislike
     $db->query("DELETE FROM \"Likes\" WHERE \"user_id\" = $user_id AND \"post_id\" = $postId;");
 

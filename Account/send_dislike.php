@@ -53,7 +53,7 @@ $user_id = $_SESSION['user']['id'];
 $getLikes = $db->query("SELECT * from \"Likes\" WHERE \"user_id\" = $user_id AND \"post_id\" = $postId");
 $getLikes_result = $getLikes->fetch(PDO::FETCH_ASSOC);
 
-if (isset($getLikes_result['id']) && $getLikes_result['up_down'] === '-1') {  //Already downvoted post
+if (isset($getLikes_result['id']) && $getLikes_result['up_down'] === -1) {  //Already downvoted post
     //Remove downvote from db 
     $db->query("DELETE FROM \"Likes\" WHERE \"user_id\" = $user_id AND \"post_id\" = $postId");
 

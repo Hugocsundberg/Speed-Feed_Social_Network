@@ -31,7 +31,7 @@ $result;
 if ($sort_by === 'new') {
     $result = $db->query("SELECT * FROM \"Posts\" ORDER BY \"date\" DESC LIMIT 30");
 } else if ($sort_by === 'mostupvoted') {
-    $result = $db->query("SELECT \"id\", \"user_id\", \"header\", \"body\", \"date\", \"link\", COALESCE((SELECT sum(\"up_down\") FROM \"Likes\" where \"Posts\".\"id\"=\"Likes\".\"post_id\"), 0) AS \"antallikes\" FROM \"Posts\" ORDER BY \"antallikes\" DESC LIMIT 30;");
+    $result = $db->query("SELECT \"id\", \"user_id\", \"header\", \"body\", \"date\", \"link\", \"image_path\", COALESCE((SELECT sum(\"up_down\") FROM \"Likes\" where \"Posts\".\"id\"=\"Likes\".\"post_id\"), 0) AS \"antallikes\" FROM \"Posts\" ORDER BY \"antallikes\" DESC LIMIT 30;");
 }
 
 $posts = $result->fetchAll(PDO::FETCH_ASSOC);
