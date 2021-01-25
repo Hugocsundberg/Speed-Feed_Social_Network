@@ -3,18 +3,6 @@ require(__DIR__ . '/views/header.php');
 require(__DIR__ . '/functions.php');
 logMessage();
 
-
-//SELECT id, user_id, header, body, date, ifnull((select sum(up_down) from likes where posts.id=likes.post_id), 0) AS antallikes FROM Posts ORDER BY antallikes DESC
-
-
-//Sort by likes or new
-// if (isset($_SESSION['user'])) {
-//     if ($_SESSION['user']['sort_by'] === 'new') {
-//     }
-// }
-
-//Fetch posts from database
-//Connect to db
 $database_host = 'ec2-34-251-118-151.eu-west-1.compute.amazonaws.com';
 $database_name = 'd2m7cahbqat10u';
 $database_user = 'ibmysphorhuxnp';
@@ -67,7 +55,12 @@ $posts = $result->fetchAll(PDO::FETCH_ASSOC);
     <?php foreach ($posts as $post) : ?>
         <?php
         $postId = $post['id'];
-
+        // if ($post['image_path'] === 'default' || null) {
+        //     $postImagePath = 'images/photo-1609050470947-f35aa6071497.jpeg';
+        // } else {
+        //     $postImagePath = $post['image_path'];
+        // }
+        $postImagePath = $post['image_path'];
         $upvoteImage = '/images/upvote.svg';
         $downvoteImage = '/images/downvote.svg';
 
@@ -150,7 +143,7 @@ $posts = $result->fetchAll(PDO::FETCH_ASSOC);
             </div>
             <a href="<?= $post['link'] ?>">
                 <div class="image-section">
-                    <img src="/images/photo-1609050470947-f35aa6071497.jpeg" alt="">
+                    <img src="<?= $postImagePath ?>" alt="">
                 </div>
             </a>
             <div class="text-section">
