@@ -105,7 +105,7 @@ if (isset($getLikes_result['id']) && $getLikes_result['up_down'] === '-1') {  //
     echo $JSON_response;
     die();
 }
-if (isset($getLikes_result['id']) && $getLikes_result['up_down'] === '1') { //Post previously liked
+if (isset($getLikes_result['id']) && $getLikes_result['up_down'] === 1) { //Post previously liked
     //remove previous like
     $db->query("DELETE FROM \"Likes\" WHERE \"user_id\" = $user_id AND \"post_id\" = $postId;");
 

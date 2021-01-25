@@ -52,8 +52,9 @@ $user_id = $_SESSION['user']['id'];
 $getLikes = $db->query("SELECT * from \"Likes\" WHERE \"user_id\" = $user_id AND \"post_id\" = $postId");
 $getLikes_result = $getLikes->fetch(PDO::FETCH_ASSOC);
 
-if (isset($getLikes_result['id']) && $getLikes_result['up_down'] === '1') {
-    //Send like to db 
+if (isset($getLikes_result['id']) && $getLikes_result['up_down'] === 1) {  //Post previously liked
+
+    //Remove like from db 
     $db->query("DELETE FROM \"Likes\" WHERE \"user_id\" = $user_id AND \"post_id\" = $postId;");
 
     //Send response to frontned
@@ -138,6 +139,7 @@ if (isset($getLikes_result['id']) && $getLikes_result['up_down'] === '-1') {
 }
 
 $response->likes = 0;
+$response->result = $getLikes_result;
 $response->message = 'we got to the end';
 $JSON_response = json_encode($response);
 echo $JSON_response;

@@ -29,4 +29,4 @@ createMessage(1, 'Post har uppdaterats');
 
 
 
-redirect('/views/index.php');
+redirect('/index.php');

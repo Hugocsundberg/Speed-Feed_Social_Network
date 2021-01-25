@@ -61,6 +61,9 @@ $posts = $result->fetchAll(PDO::FETCH_ASSOC);
         //     $postImagePath = $post['image_path'];
         // }
         $postImagePath = $post['image_path'];
+        if ($postImagePath === null) {
+            $postImagePath = 'images/image-placeholder-landing.svg';
+        }
         $upvoteImage = '/images/upvote.svg';
         $downvoteImage = '/images/downvote.svg';
 
@@ -125,11 +128,6 @@ $posts = $result->fetchAll(PDO::FETCH_ASSOC);
 
 
         ?>
-
-
-
-
-
 
         <div data-postId="<?= $postId ?>" class="post id<?= $postId ?> post-group<?= $postId ?>">
             <div class="date-section">

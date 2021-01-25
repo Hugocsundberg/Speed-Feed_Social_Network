@@ -26,9 +26,9 @@ if ($user) {
         redirect('/index.php');
     } else {
         createMessage(2, 'Account exists. Tip: enter a password that is less incorrect');
-        redirect('../views/login.php');
+        redirect('/views/login.php');
     }
 } else {
     createMessage(2, 'Create an account bro');
-    redirect('../views/login.php');
+    redirect('/views/login.php');
 }
