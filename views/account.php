@@ -23,20 +23,28 @@ if (!$_SESSION['user']) {
     $_SESSION['user'] = $userData;
 }
 
+if ($_SESSION['user']['avatar_path'] === null) {
+    $avatarPath = '/images/image-placeholder-account.png';
+} else {
+    $avatarPath = $_SESSION['user']['avatar_path'];
+}
+
 
 
 ?>
 
 <body>
-    <section class="top">
-        <h1>Account</h1>
-        <img src="<?= $_SESSION['user']['avatar_path'] ?>" alt="" class="profile-image">
-    </section>
-    <section class="form">
-        <form action="/Account/update_user.php" method="post" enctype="multipart/form-data">
 
-            <label for="file">Image</label>
-            <input class="input-field img-button" type="file" name="file" id="file">
+    <form action="/Account/update_user.php" method="post" enctype="multipart/form-data">
+        <section class="top">
+            <h1>Account</h1>
+            <img src="<?= $avatarPath ?>" alt="" class="profile-image">
+            <div class="label-container">
+                <label class="edit-image-button" for="file">Upload image</label>
+            </div>
+            <input class="hidden input-field img-button" type="file" name="file" id="file">
+        </section>
+        <section class="form">
             <label for="email">Email</label>
             <input class="input-field" value="<?php echo $_SESSION['user']['email'] ?>" type="text" name="email" id="email">
             <label for="name">Name</label>
@@ -46,7 +54,7 @@ if (!$_SESSION['user']) {
             <label for="bio">Bio</label>
             <input class="input-field" value="<?php echo $_SESSION['user']['bio'] ?>" type="text" name="bio" id="bio">
             <input class="save" type="submit" value="Save">
-        </form>
+    </form>
     </section>
     <script src="../script/hamburger.js"></script>
 </body>

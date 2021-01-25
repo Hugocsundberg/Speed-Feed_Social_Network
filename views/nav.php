@@ -11,7 +11,7 @@
             <?php
             if (!isset($_SESSION['user'])) : ?>
                 <a href="/views/login.php">
-                    <h1>Login</h1>
+                    <h1>Login/Create account</h1>
                 </a>
             <?php endif ?>
             <a href="/views/create_post.php">

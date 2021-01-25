@@ -1,45 +1,69 @@
-section.form form{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+section.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+section.top .input-field {
+  position: absolute;
+  height: 10rem;
+  width: 10rem;
+  bottom: 1rem;
+}
+
+section.top .label-container {
+  width: 16rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+section.top .edit-image-button {
+  border-radius: 5rem;
+  background-color: rgba(196, 196, 196, 0.28);
+  backdrop-filter: blur(10px);
+  appearance: none;
+  border: none;
+  /* margin-left: 10rem; */
+  padding: 0.3rem 0.6rem;
+  font-size: 0.72rem;
+  flex-grow: 0;
 }
 
 section.top {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    flex-direction: column;
-    flex-grow: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  flex-direction: column;
+  flex-grow: 0;
 }
 
-section.top h1{
-    margin-top: 0;
+section.top h1 {
+  margin-top: 0;
 }
 
 section.top img {
-    height: 10rem;
-    width: 10rem;
-    border-radius: 50%;
-    object-fit: cover;
+  height: 10rem;
+  width: 10rem;
+  border-radius: 50%;
+  object-fit: cover;
+  backdrop-filter: blur(10px);
 }
 
 section.form label {
-    font-size: 1rem;
-    font-weight: bold;
-    margin-top: 1rem;
-    width: 16rem;
+  font-size: 1rem;
+  font-weight: bold;
+  margin-top: 1rem;
+  width: 16rem;
 }
 
 section.form .save {
-    margin-top: 1rem;
-    height: 3rem;
-    width: 9rem;
-    background: lime;
-    color: white;
-    border: none;
-    border-radius: 50rem;
-    font-size: 1rem;
+  margin-top: 1rem;
+  height: 3rem;
+  width: 9rem;
+  background: lime;
+  color: white;
+  border: none;
+  border-radius: 50rem;
+  font-size: 1rem;
 }
-
-
