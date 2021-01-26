@@ -25,7 +25,7 @@ if (isset($_SESSION['user']['name'])) {
             </div>
         </div>
         <div class="image-section imageUploadSection">
-            <img class="image-upload-placeholder" src="/images/image-placeholder.svg" alt="">
+            <img class="image-upload-placeholder" src="/images/image-placeholder-landing.svg" alt="">
             <p>Click to upload image</p>
             <input class="hidden" type="file" name="file" id="file">
         </div>
@@ -53,5 +53,6 @@ if (isset($_SESSION['user']['name'])) {
 </form>
 <script src="../script/hamburger.js"></script>
 <script src="../script/image_upload.js"></script>
+<script src="../script/preview_image_post.js"></script>
 
 <?php createMessage(3) ?>

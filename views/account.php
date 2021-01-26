@@ -57,6 +57,7 @@ if ($_SESSION['user']['avatar_path'] === null) {
     </form>
     </section>
     <script src="../script/hamburger.js"></script>
+    <script src="../script/preview_image_account.js"></script>
 </body>
 
 
