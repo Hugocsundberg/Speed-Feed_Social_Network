@@ -58,12 +58,19 @@ section.form label {
 }
 
 section.form .save {
-  margin-top: 1rem;
+  margin-top: 2rem;
   height: 3rem;
   width: 9rem;
-  background: lime;
+  background: rgba(0, 233, 0, 0.795);
+  backdrop-filter: blur(10px);
   color: white;
   border: none;
   border-radius: 50rem;
   font-size: 1rem;
+}
+
+.link-submit-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

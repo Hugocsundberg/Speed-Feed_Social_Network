@@ -5,6 +5,7 @@ body {
     /*🏞🔥 Background by SVGBackgrounds.com 🔥🏞 */
     background: url(/images/Scattered-Forcefields.svg);
     background-attachment: fixed;
+    box-sizing: border-box;
 }
 
 .hidden {

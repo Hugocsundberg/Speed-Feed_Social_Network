@@ -337,3 +337,26 @@
   background: none;
   border: none;
 }
+
+form label.link-label {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-top: 1rem;
+  width: 16rem;
+}
+
+form input.link-input {
+  
+}
+
+form input.link-button {
+  margin-top: 2rem;
+  height: 3rem;
+  width: 9rem;
+  background: rgba(0, 233, 0, 0.795);
+  backdrop-filter: blur(10px);
+  color: white;
+  border: none;
+  border-radius: 50rem;
+  font-size: 1rem;
+}
