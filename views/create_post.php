@@ -46,11 +46,11 @@ if (isset($_SESSION['user'])) {
             </div>
             <div class="text-section-vote">
                 <div class="img-container">
-                    <img class="upvote" src="/assets/up-arrow.svg" alt="">
+                    <img class="upvote" src="/images/upvote.svg" alt="">
                 </div>
-                <p>42</p>
+                <p class="count-up">0 likes</p>
                 <div class="img-container">
-                    <img class="downvote" src="/assets/down-arrow.svg" alt="">
+                    <img class="downvote" src="/images/downvote.svg" alt="">
                 </div>
             </div>
         </div>
@@ -66,5 +66,6 @@ if (isset($_SESSION['user'])) {
 <script src="../script/hamburger.js"></script>
 <script src="../script/image_upload.js"></script>
 <script src="../script/preview_image_post.js"></script>
+<script src="../script/count_up.js"></script>
 
 <?php createMessage(3) ?>

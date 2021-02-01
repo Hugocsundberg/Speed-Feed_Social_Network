@@ -21,10 +21,16 @@
   --box-shadow: 0px 0px 43px -12px rgba(184, 184, 184, 0.75);
 }
 
+.post-flex-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .post {
+  max-width: 30rem;
   background: var(--post-background-color);
   backdrop-filter: blur(var(--backdrop-blur));
-  max-width: 100%;
   display: flex;
   flex-direction: column;
   border-radius: 1rem;
@@ -263,6 +269,8 @@
 .comment {
   justify-content: space-evenly;
   height: 5rem;
+  max-width: 28rem;
+  width: calc(100% - 6rem);
   position: relative;
   display: flex;
   flex-direction: column;

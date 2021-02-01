@@ -43,189 +43,192 @@ $posts = $result->fetchAll(PDO::FETCH_ASSOC);
 <body>
     <?php require(__DIR__ . '/views/nav.php') ?>
 
-    <select class="sort-by" name="sort" id="">
-        <option <?php if ($sort_by === 'new') {
-                    echo 'selected';
-                } ?>value="new">New 💎</option>
-        <option <?php if ($sort_by === 'mostupvoted') {
-                    echo 'selected';
-                } ?> value="mostupvoted">Likes 💯</option>
-    </select>
+    <div class="post-flex-container">
+        <div class="select-container">
+            <select class="sort-by" name="sort" id="">
+                <option <?php if ($sort_by === 'new') {
+                            echo 'selected';
+                        } ?>value="new">New 💎</option>
+                <option <?php if ($sort_by === 'mostupvoted') {
+                            echo 'selected';
+                        } ?> value="mostupvoted">Likes 💯</option>
+            </select>
+        </div>
+        <?php foreach ($posts as $post) : ?>
+            <?php
+            $postId = $post['id'];
+            // if ($post['image_path'] === 'default' || null) {
+            //     $postImagePath = 'images/photo-1609050470947-f35aa6071497.jpeg';
+            // } else {
+            //     $postImagePath = $post['image_path'];
+            // }
+            $postImagePath = $post['image_path'];
+            if ($postImagePath === null) {
+                $postImagePath = 'images/image-placeholder-landing.svg';
+            }
+            $upvoteImage = '/images/upvote.svg';
+            $downvoteImage = '/images/downvote.svg';
 
-    <?php foreach ($posts as $post) : ?>
-        <?php
-        $postId = $post['id'];
-        // if ($post['image_path'] === 'default' || null) {
-        //     $postImagePath = 'images/photo-1609050470947-f35aa6071497.jpeg';
-        // } else {
-        //     $postImagePath = $post['image_path'];
-        // }
-        $postImagePath = $post['image_path'];
-        if ($postImagePath === null) {
-            $postImagePath = 'images/image-placeholder-landing.svg';
-        }
-        $upvoteImage = '/images/upvote.svg';
-        $downvoteImage = '/images/downvote.svg';
+            if (isset($_SESSION['user'])) {
+                $hasLikedResult = $db->query("SELECT * FROM \"Likes\" WHERE \"post_id\" = $postId AND \"user_id\" = $userId AND \"up_down\" = 1");
+                $hasLikedData = $hasLikedResult->fetch(PDO::FETCH_ASSOC);
+                if (isset($hasLikedData['id'])) {
+                    $hasLiked = true;
+                    $upvoteImage = '/images/upvoteActive.svg';
+                } else {
+                    $hasLiked = false;
+                    $upvoteImage = '/images/upvote.svg';
+                }
 
-        if (isset($_SESSION['user'])) {
-            $hasLikedResult = $db->query("SELECT * FROM \"Likes\" WHERE \"post_id\" = $postId AND \"user_id\" = $userId AND \"up_down\" = 1");
-            $hasLikedData = $hasLikedResult->fetch(PDO::FETCH_ASSOC);
-            if (isset($hasLikedData['id'])) {
-                $hasLiked = true;
-                $upvoteImage = '/images/upvoteActive.svg';
+                $hasDislikedResult = $db->query("SELECT \"id\" FROM \"Likes\" WHERE \"post_id\" = $postId AND \"user_id\" = $userId AND \"up_down\" = -1");
+                $hasDislikedData = $hasDislikedResult->fetch(PDO::FETCH_ASSOC);
+                if (isset($hasDislikedData['id'])) {
+                    $hasDisliked = true;
+                    $downvoteImage = '/images/downvoteActive.svg';
+                } else {
+                    $hasDisliked = false;
+                    $downvoteImage = '/images/downvote.svg';
+                }
             } else {
                 $hasLiked = false;
-                $upvoteImage = '/images/upvote.svg';
-            }
-
-            $hasDislikedResult = $db->query("SELECT \"id\" FROM \"Likes\" WHERE \"post_id\" = $postId AND \"user_id\" = $userId AND \"up_down\" = -1");
-            $hasDislikedData = $hasDislikedResult->fetch(PDO::FETCH_ASSOC);
-            if (isset($hasDislikedData['id'])) {
-                $hasDisliked = true;
-                $downvoteImage = '/images/downvoteActive.svg';
-            } else {
                 $hasDisliked = false;
-                $downvoteImage = '/images/downvote.svg';
             }
-        } else {
-            $hasLiked = false;
-            $hasDisliked = false;
-        }
 
 
 
-        //Fetch all comments on post
-        $commentResult = $db->query("SELECT * FROM \"Comments\" WHERE \"post_id\" = $postId");
-        $comments = $commentResult->fetchAll(PDO::FETCH_ASSOC);
+            //Fetch all comments on post
+            $commentResult = $db->query("SELECT * FROM \"Comments\" WHERE \"post_id\" = $postId");
+            $comments = $commentResult->fetchAll(PDO::FETCH_ASSOC);
 
-        //Fetch likes on post
-        $likesResult = $db->query("SELECT COUNT(\"user_id\") AS \"likes\" FROM \"Likes\" WHERE \"post_id\" = $postId AND \"up_down\" = 1");
-        $likes = $likesResult->fetch(PDO::FETCH_ASSOC)['likes'];
+            //Fetch likes on post
+            $likesResult = $db->query("SELECT COUNT(\"user_id\") AS \"likes\" FROM \"Likes\" WHERE \"post_id\" = $postId AND \"up_down\" = 1");
+            $likes = $likesResult->fetch(PDO::FETCH_ASSOC)['likes'];
 
 
 
 
-        //Fetch dislikes
-        $dislikeResult = $db->query("SELECT COUNT(user_id) AS \"dislikes\" FROM \"Likes\" WHERE \"post_id\" = $postId AND \"up_down\" = -1");
-        $dislikes = $dislikeResult->fetch(PDO::FETCH_ASSOC)['dislikes'];
+            //Fetch dislikes
+            $dislikeResult = $db->query("SELECT COUNT(user_id) AS \"dislikes\" FROM \"Likes\" WHERE \"post_id\" = $postId AND \"up_down\" = -1");
+            $dislikes = $dislikeResult->fetch(PDO::FETCH_ASSOC)['dislikes'];
 
-        $LikesSum = $likes - $dislikes;
+            $LikesSum = $likes - $dislikes;
 
-        //Fetch user from database
-        $postUserId = $post['user_id'];
-        $result = $db->query("SELECT * FROM \"Users\" WHERE \"id\" = $postUserId");
-        $user = $result->fetch(PDO::FETCH_ASSOC);
-        isset($user['avatar_path']) ? $avatarPath = $user['avatar_path'] : $avatarPath = '/Account/uploads/default.svg';
-
-        //If user has a name, set it to $userName
-        if (isset($user['name'])) {
-            $userName = $user['name'];
-        } else {
-            $userName = 'IHaveNoName';
-        }
-
-
-
-
-        ?>
-
-        <div data-postId="<?= $postId ?>" class="post id<?= $postId ?> post-group<?= $postId ?>">
-            <div class="date-section">
-                <div class="left">
-                    <img src=<?= $avatarPath ?> alt="">
-                    <p class="name"><?= $userName ?></p>
-                </div>
-                <div class="right">
-                    <p class="date"><?= date('D M Y H:i', $post['date']) ?></p>
-                </div>
-            </div>
-            <a href="<?= $post['link'] ?>">
-                <div class="image-section">
-                    <img src="<?= $postImagePath ?>" alt="">
-                </div>
-            </a>
-            <div class="text-section">
-                <div class="text-section-text">
-                    <h2><?= $post['header'] ?></h2>
-                    <p><?= $post['body'] ?></p>
-                </div>
-
-                <div class="text-section-vote" data-post="<?= $post['id'] ?>">
-                    <div class="upvote-section img-container">
-                        <img class="upvote <?= $hasLiked ? 'upvote-active' : 'upvoteInactive' ?>" src="<?= $upvoteImage ?>" alt="">
-                    </div>
-                    <p><?= $LikesSum ?></p>
-                    <div class="downvote-section img-container">
-                        <img class="downvote <?= $hasDisliked ? 'downvote-active' : 'downvoteInactive' ?>" src="<?= $downvoteImage ?>" alt="">
-                    </div>
-                </div>
-            </div>
-            <div class="bottom-section">
-                <div class="left">
-                    <button class="post-coment-button">comment</button>
-                </div>
-                <?php if (isset($_SESSION['user']) && $post['user_id'] === $_SESSION['user']['id']) : ?>
-                    <div class="right">
-                        <button class="post-edit-button">Edit</button>
-                        <button class="post-delete-button">Delete</button>
-                    </div>
-                <?php endif ?>
-            </div>
-        </div>
-
-        <?php foreach ($comments as $comment) : ?>
-            <?php
-            $commenter_id = $comment['user_id'];
-            $result = $db->query("SELECT \"name\" FROM \"Users\" WHERE \"id\" = $commenter_id");
-            $data = $result->fetch(PDO::FETCH_ASSOC);
-            $commentId = $comment['id'];
-
-            //Fetch commenter
-            $commenterId = $comment['user_id'];
-            $result = $db->query("SELECT * FROM \"Users\" WHERE \"id\" = $commenterId");
-            $commenter = $result->fetch(PDO::FETCH_ASSOC);
-            isset($commenter['avatar_path']) ? $commentImageURL = $commenter['avatar_path'] : $commentImageURL = '/Account/uploads/default.svg';
+            //Fetch user from database
+            $postUserId = $post['user_id'];
+            $result = $db->query("SELECT * FROM \"Users\" WHERE \"id\" = $postUserId");
+            $user = $result->fetch(PDO::FETCH_ASSOC);
+            isset($user['avatar_path']) ? $avatarPath = $user['avatar_path'] : $avatarPath = '/Account/uploads/default.svg';
 
             //If user has a name, set it to $userName
-            if (isset($data['name'])) {
-                $commenter_name = $data['name'];
+            if (isset($user['name'])) {
+                $userName = $user['name'];
             } else {
-                $commenter_name = 'IHaveNoName';
+                $userName = 'IHaveNoName';
             }
+
+
+
+
             ?>
-            <div data-postId="<?= $postId ?>" data-id="<?= $commentId ?>" class="comment post<?= $postId ?> post-group<?= $postId ?> comment-id<?= $commentId ?>">
-                <div class="upper">
+
+            <div data-postId="<?= $postId ?>" class="post id<?= $postId ?> post-group<?= $postId ?>">
+                <div class="date-section">
                     <div class="left">
-                        <img src=<?= $commentImageURL ?> alt="">
-                        <p class="name"><?= $commenter_name ?></p>
+                        <img src=<?= $avatarPath ?> alt="">
+                        <p class="name"><?= $userName ?></p>
                     </div>
                     <div class="right">
-                        <p class="date"><?= date('D M Y H:i', $comment['date']) ?></p>
+                        <p class="date"><?= date('D M Y H:i', $post['date']) ?></p>
                     </div>
                 </div>
-                <div class="lower">
-                    <div class="left">
-                        <p class="comment-paragraph"><?= $comment['body'] ?></p>
+                <a href="<?= $post['link'] ?>">
+                    <div class="image-section">
+                        <img src="<?= $postImagePath ?>" alt="">
                     </div>
-                    <?php if (isset($_SESSION['user']) && $comment['user_id'] === $_SESSION['user']['id']) : ?>
+                </a>
+                <div class="text-section">
+                    <div class="text-section-text">
+                        <h2><?= $post['header'] ?></h2>
+                        <p><?= $post['body'] ?></p>
+                    </div>
+
+                    <div class="text-section-vote" data-post="<?= $post['id'] ?>">
+                        <div class="upvote-section img-container">
+                            <img class="upvote <?= $hasLiked ? 'upvote-active' : 'upvoteInactive' ?>" src="<?= $upvoteImage ?>" alt="">
+                        </div>
+                        <p><?= $LikesSum ?></p>
+                        <div class="downvote-section img-container">
+                            <img class="downvote <?= $hasDisliked ? 'downvote-active' : 'downvoteInactive' ?>" src="<?= $downvoteImage ?>" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="bottom-section">
+                    <div class="left">
+                        <button class="post-coment-button">comment</button>
+                    </div>
+                    <?php if (isset($_SESSION['user']) && $post['user_id'] === $_SESSION['user']['id']) : ?>
                         <div class="right">
-                            <button class="edit-button button">Edit</button>
-                            <button class="delete-button button">Delete</button>
+                            <button class="post-edit-button">Edit</button>
+                            <button class="post-delete-button">Delete</button>
                         </div>
                     <?php endif ?>
                 </div>
             </div>
-        <?php endforeach ?>
-    <?php endforeach ?>
-    <script src="../script/like.js"></script>
-    <script src="../script/delete_post.js"></script>
-    <script src="../script/edit_comment.js"></script>
-    <script src="../script/edit_post.js"></script>
-    <script src="../script/scroll.js"></script>
-    <script src="../script/comment.js"></script>
-    <script src="../script/sort.js"></script>
-    <script src="../script/hamburger.js"></script>
-    <script src="../script/functions.js"></script>
+
+            <?php foreach ($comments as $comment) : ?>
+                <?php
+                $commenter_id = $comment['user_id'];
+                $result = $db->query("SELECT \"name\" FROM \"Users\" WHERE \"id\" = $commenter_id");
+                $data = $result->fetch(PDO::FETCH_ASSOC);
+                $commentId = $comment['id'];
+
+                //Fetch commenter
+                $commenterId = $comment['user_id'];
+                $result = $db->query("SELECT * FROM \"Users\" WHERE \"id\" = $commenterId");
+                $commenter = $result->fetch(PDO::FETCH_ASSOC);
+                isset($commenter['avatar_path']) ? $commentImageURL = $commenter['avatar_path'] : $commentImageURL = '/Account/uploads/default.svg';
+
+                //If user has a name, set it to $userName
+                if (isset($data['name'])) {
+                    $commenter_name = $data['name'];
+                } else {
+                    $commenter_name = 'IHaveNoName';
+                }
+                ?>
+                <div data-postId="<?= $postId ?>" data-id="<?= $commentId ?>" class="comment post<?= $postId ?> post-group<?= $postId ?> comment-id<?= $commentId ?>">
+                    <div class="upper">
+                        <div class="left">
+                            <img src=<?= $commentImageURL ?> alt="">
+                            <p class="name"><?= $commenter_name ?></p>
+                        </div>
+                        <div class="right">
+                            <p class="date"><?= date('D M Y H:i', $comment['date']) ?></p>
+                        </div>
+                    </div>
+                    <div class="lower">
+                        <div class="left">
+                            <p class="comment-paragraph"><?= $comment['body'] ?></p>
+                        </div>
+                        <?php if (isset($_SESSION['user']) && $comment['user_id'] === $_SESSION['user']['id']) : ?>
+                            <div class="right">
+                                <button class="edit-button button">Edit</button>
+                                <button class="delete-button button">Delete</button>
+                            </div>
+                        <?php endif ?>
+                    </div>
+                </div>
+            <?php endforeach ?>
+    </div>
+<?php endforeach ?>
+<script src="../script/like.js"></script>
+<script src="../script/delete_post.js"></script>
+<script src="../script/edit_comment.js"></script>
+<script src="../script/edit_post.js"></script>
+<script src="../script/scroll.js"></script>
+<script src="../script/comment.js"></script>
+<script src="../script/sort.js"></script>
+<script src="../script/hamburger.js"></script>
+<script src="../script/functions.js"></script>
 </body>
 <?php createMessage(3) ?>
 
