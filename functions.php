@@ -19,13 +19,27 @@ function logMessage()
     if (count($_SESSION['message']) > 0) { //Only try logging if array is not empty
         foreach (($_SESSION['message']) as $message) {
             if ($message['type'] !== 3) {
-                $errorArray[] = $message['message'];
+                $errorArray[] = $message;
             } else {
                 $errorArray = [];
             }
         }
         if (count($errorArray) > 0) {
-            print_r($errorArray);
+            $error = end($errorArray);
+            $typeClass = '';
+            $divMessage = $error['message'];
+            if ($error['type'] === 1) {
+                $typeClass = 'info-message';
+            } else if ($error['type'] === 2) {
+                $typeClass = 'error-message';
+            }
+            echo "
+            <div class=\"message-container\">
+                <div class=\"message-box $typeClass\">
+                    <p>$divMessage</p>
+                </div>
+            </div>
+                ";
         }
     }
 }

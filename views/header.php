@@ -11,4 +11,5 @@
     <link rel="stylesheet" href="/styles/nav.css">
     <link rel="stylesheet" href="/styles/login.css">
     <link rel="stylesheet" href="/styles/account.css">
+    <link rel="stylesheet" href="/styles/message.css">
 </head>
