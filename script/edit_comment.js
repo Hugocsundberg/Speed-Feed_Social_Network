@@ -38,7 +38,7 @@ const sendComment = (e) => {
         commentId: commentId
     }
 
-    window.fetch('../Account/edit-comment.php', {
+    window.fetch('../account/edit_comment.php', {
         body: JSON.stringify(JSONBody),
         method: 'post',
         credentials: 'include'
