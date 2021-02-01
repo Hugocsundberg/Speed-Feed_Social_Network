@@ -2,7 +2,8 @@ const commentButtons = document.querySelectorAll('.post-coment-button')
 
 const submitComment = (e) => {
     const postId = e.target.parentElement.parentElement.parentElement.dataset.id
-    const value = e.target.previousSibling.value
+    const value = e.target.parentElement.previousSibling.children[0].value
+    console.log(value)
 
     const JSONBody = {
         postId: postId,
@@ -35,7 +36,7 @@ const newComment = (e) => {
                 const lastComment = commentArray[commentArray.length - 1]
                 const commentDiv = document.createElement('div')
                 commentDiv.classList.add('comment')
-                commentDiv.innerHTML = `<div class= "upper" ><div class="left"><img src="/images/photo-1609050470947-f35aa6071497.jpeg" alt=""><p class="name">12345</p></div><div class="right"><p class="date">Tue Dec 2020 12:20</p></div></div><div class="lower"><div class="left"><input type="text" class="comment-paragraph"></input><button class="comment-submit">Submit</button></div></div>`
+                commentDiv.innerHTML = `<div class= "upper" ><div class="left"><img src="/images/photo-1609050470947-f35aa6071497.jpeg" alt=""><p class="name">12345</p></div><div class="right"><p class="date">Tue Dec 2020 12:20</p></div></div><div class="lower"><div class="left"><input type="text" class="comment-paragraph"></input></div><div class="right"><button class="comment-submit button">Submit</button></div></div>`
                 commentDiv.setAttribute('data-id', clickedPost.dataset.postid)
 
                 document.body.insertBefore(commentDiv, lastComment.nextElementSibling)

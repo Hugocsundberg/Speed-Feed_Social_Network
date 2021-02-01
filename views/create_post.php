@@ -10,6 +10,16 @@ if (isset($_SESSION['user']['name'])) {
     $userName = 'IHaveNoName';
 }
 
+if (isset($_SESSION['user'])) {
+    if ($_SESSION['user']['avatar_path'] === 'default') {
+        $avatarPath = '../account/uploads/default.svg';
+    } else {
+        $avatarPath = $_SESSION['user']['avatar_path'];
+    }
+} else {
+    $avatarPath = '../account/uploads/default.svg';
+}
+
 //Database connection
 // $db = new PDO('sqlite:../hacker_news_database.sqlite3');
 ?>
@@ -17,7 +27,7 @@ if (isset($_SESSION['user']['name'])) {
     <div class="post">
         <div class="date-section">
             <div class="left">
-                <img src="/images/photo-1609050470947-f35aa6071497.jpeg" alt="">
+                <img src="<?= $avatarPath ?>" alt="">
                 <p class="name"><?= $userName ?></p>
             </div>
             <div class="right">

@@ -23,7 +23,7 @@ if (!$_SESSION['user']) {
     $_SESSION['user'] = $userData;
 }
 
-if ($_SESSION['user']['avatar_path'] === null) {
+if ($_SESSION['user']['avatar_path'] === 'default') {
     $avatarPath = '/images/image-placeholder-account.png';
 } else {
     $avatarPath = $_SESSION['user']['avatar_path'];
