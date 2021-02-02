@@ -6,7 +6,7 @@
     <div class="hamburger-menu hamburger">
         <div class="hamburger_text_container">
             <a href="/index.php">
-                <h1>Start</h1>
+                <h1 class="most-right-nav">Start</h1>
             </a>
             <?php
             if (!isset($_SESSION['user'])) : ?>

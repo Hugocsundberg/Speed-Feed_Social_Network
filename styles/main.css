@@ -11,6 +11,7 @@ body {
 }
 
 :root {
+    font-size: 10px;
     --color-text-main: rgb(48, 48, 48); 
     --color-standard-blue:  rgb(0, 132, 255);
     --color-standard-red:  rgb(255, 0, 0);
@@ -33,4 +34,10 @@ body {
     width: 16rem;
     padding-left: .5rem;
     font-weight: 1rem;
+}
+
+@media (min-width: 370px) {
+    :root {
+        font-size: 16px;
+    }
 }

@@ -23,7 +23,7 @@
 
 .post-flex-container {
   position: relative;
-  margin-top: 1rem;
+  top: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -315,7 +315,7 @@
 .comment .lower {
   display: flex;
   justify-content: space-between;
-  height: 2.5rem;
+  /* height: 2.5rem; */
 }
 
 .comment .lower .right {
