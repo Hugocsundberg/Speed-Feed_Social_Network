@@ -13,7 +13,7 @@ const sendLike = (post_id) => {
         return res.json()
     }).then(data => {
         console.log(data)
-        logMessage(1, data.message)
+        logMessage(data.type, data.message)
         likeIndicator = document.querySelector(`.post.id${post_id} .text-section .text-section-vote p`)
 
         likeIndicator.innerText = data.likes;
@@ -62,7 +62,7 @@ const sendDislike = (post_id) => {
         return res.json()
     }).then(data => {
         console.log(data)
-        logMessage(1, data.message)
+        logMessage(data.type, data.message)
 
         likeIndicator = document.querySelector(`.post.id${post_id} .text-section .text-section-vote p`)
         likeIndicator.innerText = data.likes;

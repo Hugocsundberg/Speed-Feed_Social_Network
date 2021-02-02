@@ -38,6 +38,7 @@ if (!isset($_SESSION['user'])) {
 
     $response->post_likes = $LikesSum;
     $response->loggedIn = false;
+    $response->type = 2;
     $response->likes = $LikesSum;
     $response->message = 'Log in to vote';
     $JSON_response = json_encode($response);
@@ -70,6 +71,7 @@ if (isset($getLikes_result['id']) && $getLikes_result['up_down'] === 1) {  //Pos
 
     $response->likes = $LikesSum;
     $response->post_likes = $LikesSum;
+    $response->type = 1;
     $response->addedlikeCount = -1;
     $response->message = 'You have unliked this post';
     $JSON_response = json_encode($response);
@@ -98,6 +100,7 @@ if (isset($getLikes_result['id']) && $getLikes_result['up_down'] === 1) {  //Pos
 
     $response->likes = $LikesSum;
     $response->post_likes = $LikesSum;
+    $response->type = 1;
     $response->addedlikeCount = 1;
     $response->message = 'You liked the post';
     $JSON_response = json_encode($response);
@@ -130,6 +133,7 @@ if (isset($getLikes_result['id']) && $getLikes_result['up_down'] === -1) {
 
     $response->likes = $LikesSum;
     $response->post_likes = $LikesSum;
+    $response->type = 1;
     $response->addedlikeCount = 2;
     $response->message = 'You liked the post and the unlike is removed';
     $JSON_response = json_encode($response);
@@ -140,27 +144,8 @@ if (isset($getLikes_result['id']) && $getLikes_result['up_down'] === -1) {
 
 $response->likes = 0;
 $response->result = $getLikes_result;
-$response->message = 'we got to the end';
+$response->type = 2;
+$response->message = 'Problem... got to do more testing';
 $JSON_response = json_encode($response);
 echo $JSON_response;
 die();
-
-//Send Like to db
-
-
-
-
-// foreach ($userLikes as $like) {
-//     if ($like['id'] === $postId) {
-//         die(var_dump('already liked'));
-//     }
-// }
-
-//If user is not logged in
-// logMessage user is not logged in 
-//die dump failure 
-//if user has already liked post 
-//logMessage post is already liked 
-//die dump failure 
-//if user is logged in and has not liked post 
-//die dump true 

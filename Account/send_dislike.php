@@ -39,6 +39,7 @@ if (!isset($_SESSION['user'])) {
 
     $response->post_likes = $LikesSum;
     $response->loggedIn = false;
+    $response->type = 2;
     $response->likes = $LikesSum;
     $response->message = 'Log in to vote';
     $JSON_response = json_encode($response);
@@ -70,6 +71,7 @@ if (isset($getLikes_result['id']) && $getLikes_result['up_down'] === -1) {  //Al
 
     $response->post_likes = $LikesSum;
     $response->addedlikeCount = 1;
+    $response->type = 1;
     $response->likes = $LikesSum;
     $response->message = 'You have un-downvoted this post';
     $JSON_response = json_encode($response);
@@ -99,6 +101,7 @@ if (isset($getLikes_result['id']) && $getLikes_result['up_down'] === -1) {  //Al
 
     $response->post_likes = $LikesSum;
     $response->addedlikeCount = -1;
+    $response->type = 1;
     $response->likes = $LikesSum;
     $response->message = 'You disliked the post';
     $JSON_response = json_encode($response);
@@ -130,6 +133,7 @@ if (isset($getLikes_result['id']) && $getLikes_result['up_down'] === 1) { //Post
 
     $response->post_likes = $LikesSum;
     $response->addedlikeCount = -2;
+    $response->type = 1;
     $response->likes = $LikesSum;
     $response->message = 'You unliked the post and the like is removed';
     $JSON_response = json_encode($response);
