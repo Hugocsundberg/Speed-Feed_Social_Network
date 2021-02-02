@@ -13,13 +13,18 @@
     top: 1rem;
     z-index: 2200;
     pointer-events: none;
+    display: flex;
+    justify-content: center;
 }
 
 .message-box {
+    width: 100%;
+    max-width: 30rem;
     height: 3rem;
     margin-left: 1rem;
     margin-right: 1rem;
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     border-radius: 1rem;
     display: flex;
     justify-content: center;

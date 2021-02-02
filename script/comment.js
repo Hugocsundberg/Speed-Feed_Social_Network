@@ -31,6 +31,7 @@ const newComment = (e) => {
             console.log(value);
             if (value) {
                 const clickedPost = e.target.parentElement.parentElement.parentElement
+                postFlexContainer = document.querySelector('.post-flex-container')
                 const postId = clickedPost.dataset.postid
                 const commentArray = document.querySelectorAll(`.post-group${postId}`)
                 const lastComment = commentArray[commentArray.length - 1]
@@ -38,8 +39,7 @@ const newComment = (e) => {
                 commentDiv.classList.add('comment')
                 commentDiv.innerHTML = `<div class= "upper" ><div class="left"><img src="/images/photo-1609050470947-f35aa6071497.jpeg" alt=""><p class="name">12345</p></div><div class="right"><p class="date">Tue Dec 2020 12:20</p></div></div><div class="lower"><div class="left"><input type="text" class="comment-paragraph"></input></div><div class="right"><button class="comment-submit button">Submit</button></div></div>`
                 commentDiv.setAttribute('data-id', clickedPost.dataset.postid)
-
-                document.body.insertBefore(commentDiv, lastComment.nextElementSibling)
+                postFlexContainer.insertBefore(commentDiv, lastComment.nextElementSibling)
                 const submitButton = document.querySelector('.comment-submit')
                 submitButton.addEventListener(('click'), submitComment)
             } else {

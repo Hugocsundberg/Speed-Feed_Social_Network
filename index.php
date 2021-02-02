@@ -218,17 +218,17 @@ $posts = $result->fetchAll(PDO::FETCH_ASSOC);
                     </div>
                 </div>
             <?php endforeach ?>
+        <?php endforeach ?>
     </div>
-<?php endforeach ?>
-<script src="../script/like.js"></script>
-<script src="../script/delete_post.js"></script>
-<script src="../script/edit_comment.js"></script>
-<script src="../script/edit_post.js"></script>
-<script src="../script/scroll.js"></script>
-<script src="../script/comment.js"></script>
-<script src="../script/sort.js"></script>
-<script src="../script/hamburger.js"></script>
-<script src="../script/functions.js"></script>
+    <script src="../script/like.js"></script>
+    <script src="../script/delete_post.js"></script>
+    <script src="../script/edit_comment.js"></script>
+    <script src="../script/edit_post.js"></script>
+    <script src="../script/scroll.js"></script>
+    <script src="../script/comment.js"></script>
+    <script src="../script/sort.js"></script>
+    <script src="../script/hamburger.js"></script>
+    <script src="../script/functions.js"></script>
 </body>
 <?php createMessage(3) ?>
 

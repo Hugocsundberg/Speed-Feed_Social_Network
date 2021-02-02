@@ -21,6 +21,7 @@ section.top .edit-image-button {
   border-radius: 5rem;
   background-color: rgba(196, 196, 196, 0.28);
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   appearance: none;
   border: none;
   /* margin-left: 10rem; */
@@ -48,6 +49,7 @@ section.top img {
   border-radius: 50%;
   object-fit: cover;
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 section.form label {
@@ -63,6 +65,7 @@ section.form .save {
   width: 9rem;
   background: rgba(0, 233, 0, 0.795);
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   color: white;
   border: none;
   border-radius: 50rem;

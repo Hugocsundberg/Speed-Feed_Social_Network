@@ -11,13 +11,16 @@ const editComment = (e) => {
     //text input
     const newElement = document.createElement('input')
     newElement.setAttribute('type', 'text')
-    newElement.setAttribute('placeholder', previousValue)
+    newElement.setAttribute('value', previousValue)
     newElement.classList.add('editCommentInput')
+    newElement.classList.add('comment-paragraph')
     parentElement.insertBefore(newElement, paragraph)
     paragraph.remove()
     //button 
     const newButton = document.createElement('button')
     newButton.classList.add('editCommentSubmitButton')
+    newButton.classList.add('comment-submit')
+    newButton.classList.add('button')
     newButton.innerText = "Update"
     newElement.insertAdjacentElement('afterEnd', newButton)
     newButton.addEventListener(('click'), sendComment)

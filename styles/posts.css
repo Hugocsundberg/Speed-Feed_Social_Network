@@ -16,12 +16,14 @@
   font-size: 16px;
   font-family: Raleway;
   /* Variables */
-  --backdrop-blur: 3px;
+  --backdrop-blur: 10px;
   --post-background-color: rgba(255, 255, 255, 0.747);
   --box-shadow: 0px 0px 43px -12px rgba(184, 184, 184, 0.75);
 }
 
 .post-flex-container {
+  position: relative;
+  margin-top: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -29,8 +31,8 @@
 
 .post {
   max-width: 30rem;
-  background: var(--post-background-color);
   backdrop-filter: blur(var(--backdrop-blur));
+  -webkit-backdrop-filter: blur(var(--backdrop-blur));
   display: flex;
   flex-direction: column;
   border-radius: 1rem;
@@ -268,7 +270,6 @@
 /* Comment */
 .comment {
   justify-content: space-evenly;
-  height: 5rem;
   max-width: 28rem;
   width: calc(100% - 6rem);
   position: relative;
@@ -279,13 +280,13 @@
   flex-grow: 1;
   margin-bottom: 1rem;
   overflow: hidden;
-  background: var(--post-background-color);
   backdrop-filter: blur(var(--backdrop-blur));
+  -webkit-backdrop-filter: blur(var(--backdrop-blur));
   box-shadow: var(--box-shadow);
 }
 
 .comment .upper {
-  height: 2rem;
+  height: 2.5rem;
   display: flex;
   justify-content: space-between;
 }
@@ -314,6 +315,7 @@
 .comment .lower {
   display: flex;
   justify-content: space-between;
+  height: 2.5rem;
 }
 
 .comment .lower .right {
@@ -332,7 +334,11 @@
 }
 
 .comment .lower .left {
-  margin-left: 1rem;
+  margin-left: .6rem;
+  border-radius: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .comment-submit {
@@ -344,7 +350,7 @@ input.comment-paragraph {
   border-radius: 50px;
   border: none;
   background: #ecececad;
-  height: 100%;
+  height: 70%;
   margin-bottom: 0.1rem;
 }
 
@@ -353,6 +359,7 @@ input.comment-paragraph {
   appearance: none;
   border: none;
   padding: 0.3rem 0.6rem;
+  color: white;
 }
 
 /* Create post  */
@@ -372,6 +379,13 @@ input.comment-paragraph {
   border: none;
 }
 
+.create-post-form {
+  display: flex;
+  flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 form label.link-label {
   font-size: 1rem;
   font-weight: bold;
@@ -389,6 +403,7 @@ form input.link-button {
   width: 9rem;
   background: rgba(0, 233, 0, 0.795);
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   color: white;
   border: none;
   border-radius: 50rem;
