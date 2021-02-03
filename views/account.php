@@ -35,12 +35,12 @@ if ($_SESSION['user']['avatar_path'] === 'default') {
 
 <body>
 
-    <form action="/Account/update_user.php" method="post" enctype="multipart/form-data">
+    <form class="account-form" action="/Account/update_user.php" method="post" enctype="multipart/form-data">
         <section class="top">
             <h1>Account</h1>
             <img src="<?= $avatarPath ?>" alt="" class="profile-image">
             <div class="label-container">
-                <label class="edit-image-button" for="file">Upload image</label>
+                <label class="edit-image-button press-bounce" for="file">Upload image</label>
             </div>
             <input class="hidden input-field img-button" type="file" name="file" id="file">
         </section>
@@ -53,11 +53,16 @@ if ($_SESSION['user']['avatar_path'] === 'default') {
             <input class="input-field" placeholder="***********" type="text" name="password" id="password">
             <label for="bio">Bio</label>
             <input class="input-field" value="<?php echo $_SESSION['user']['bio'] ?>" type="text" name="bio" id="bio">
-            <input class="save" type="submit" value="Save">
+            <input class="hidden form-account-submit" type="submit" value="hidden">
+            <div class="save inactive">
+                <p>Save</p>
+            </div>
     </form>
     </section>
     <script src="../script/hamburger.js"></script>
-    <script src="../script/preview_image_account.js"></script>
+    <script src="../script/functions.js"></script>
+    <script src="../script/Classes/ConfirmationBox.js"></script>
+    <script src="../script/account.js"></script>
 </body>
 
 
