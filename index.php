@@ -153,11 +153,11 @@ $posts = $result->fetchAll(PDO::FETCH_ASSOC);
                     </div>
 
                     <div class="text-section-vote" data-post="<?= $post['id'] ?>">
-                        <div class="upvote-section img-container">
+                        <div class="upvote-section img-container press-bounce">
                             <img class="upvote <?= $hasLiked ? 'upvote-active' : 'upvoteInactive' ?>" src="<?= $upvoteImage ?>" alt="">
                         </div>
                         <p><?= $LikesSum ?></p>
-                        <div class="downvote-section img-container">
+                        <div class="downvote-section img-container press-bounce">
                             <img class="downvote <?= $hasDisliked ? 'downvote-active' : 'downvoteInactive' ?>" src="<?= $downvoteImage ?>" alt="">
                         </div>
                     </div>
@@ -168,8 +168,8 @@ $posts = $result->fetchAll(PDO::FETCH_ASSOC);
                     </div>
                     <?php if (isset($_SESSION['user']) && $post['user_id'] === $_SESSION['user']['id']) : ?>
                         <div class="right">
-                            <button class="post-edit-button">Edit</button>
-                            <button class="post-delete-button">Delete</button>
+                            <button class="post-edit-button press-bounce">Edit</button>
+                            <button class="post-delete-button press-bounce">Delete</button>
                         </div>
                     <?php endif ?>
                 </div>
@@ -211,8 +211,8 @@ $posts = $result->fetchAll(PDO::FETCH_ASSOC);
                         </div>
                         <?php if (isset($_SESSION['user']) && $comment['user_id'] === $_SESSION['user']['id']) : ?>
                             <div class="right">
-                                <button class="edit-button button">Edit</button>
-                                <button class="delete-button button">Delete</button>
+                                <button class="edit-button button press-bounce">Edit</button>
+                                <button class="delete-button button press-bounce">Delete</button>
                             </div>
                         <?php endif ?>
                     </div>

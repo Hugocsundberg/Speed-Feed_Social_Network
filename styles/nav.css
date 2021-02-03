@@ -12,7 +12,6 @@
   background-repeat: none;
   background-position: center;
   background-size: contain;
-  transition: 1s;
   z-index: 2100;
   border: none;
 }
@@ -51,7 +50,7 @@
   line-height: 27px;
   margin-left: 37px;
   margin-top: 3rem;
-  width: 100vw;
+  width: fit-content;
 }
 
 a {
@@ -147,9 +146,13 @@ a {
   }
 
   .hamburger_text_container h1:hover {
-    color: red;
-    text-shadow: 0px 0px 12px rgba(255,0,0,0.7);
+    color: var(--color-standard-red);
+    text-shadow: 0px 0px 12px var(--color-standard-red);
   }
+  /* .hamburger_text_container h1.red-shadow:hover {
+    color: var(--color-standard-red);
+    text-shadow: 0px 0px 12px var(--color-standard-red);
+  } */
 
   .logo {
     position: fixed;

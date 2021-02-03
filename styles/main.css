@@ -1,6 +1,7 @@
 body {
     margin: 4rem 0 0 0;
     padding: 0;
+    margin: 0;
     width: 100vw;
     /*🏞🔥 Background by SVGBackgrounds.com 🔥🏞 */
     background: url(/images/Scattered-Forcefields.svg);
@@ -8,6 +9,11 @@ body {
     box-sizing: border-box;
     color: var(--color-text-main);
     
+    
+}
+
+*:focus {
+    outline: none;
 }
 
 :root {
@@ -21,6 +27,20 @@ body {
     visibility: hidden;
     position: absolute;
 }
+
+.press-bounce {
+    transition: .2s;
+}
+
+.press-bounce:active {
+    transform: scale(0.8);
+}
+
+.press-bounce:hover {
+    cursor: pointer;
+}
+
+
 
 .input-field {
     background: #f3f3f3c9;
