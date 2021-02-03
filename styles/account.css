@@ -1,3 +1,8 @@
+.account-form {
+  position: relative;
+  top: 7rem;
+}
+
 section.form {
   display: flex;
   flex-direction: column;
@@ -70,6 +75,21 @@ section.form .save {
   border: none;
   border-radius: 50rem;
   font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;font-weight: bold;
+  transition: .5s;
+}
+
+.inactive {
+  background: transparent !important;
+  pointer-events: none;
+
+  background: #f3f3f3c9 !important;
+  color: rgb(196, 196, 196) !important;
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+
 }
 
 .link-submit-container {

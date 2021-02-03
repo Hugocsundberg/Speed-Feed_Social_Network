@@ -55,29 +55,27 @@ if ($name !== '') {
     $stmt->bindParam(':name', $name);
     $stmt->bindParam(':user_id', $user_id);
     $stmt->execute();
-    createMessage(1, 'Namn har uppdaterats');
 }
 if ($email !== '') {
     $stmt = $db->prepare("UPDATE \"Users\" SET \"email\" = :email WHERE \"id\" = :user_id");
     $stmt->bindParam(':email', $email);
     $stmt->bindParam(':user_id', $user_id);
     $stmt->execute();
-    createMessage(1, 'Email har uppdaterats');
 }
 if ($password !== '') {
     $stmt = $db->prepare("UPDATE \"Users\" SET \"password_hash\" = :password_hash WHERE \"id\" = :user_id");
     $stmt->bindParam(':password_hash', $password_hash);
     $stmt->bindParam(':user_id', $user_id);
     $stmt->execute();
-    createMessage(1, 'Password har uppdaterats');
 }
 if ($bio !== '') {
     $stmt = $db->prepare("UPDATE \"Users\" SET \"bio\" = :bio WHERE \"id\" = :user_id");
     $stmt->bindParam(':bio', $bio);
     $stmt->bindParam(':user_id', $user_id);
     $stmt->execute();
-    createMessage(1, 'Bio har uppdaterats');
 }
+
+createMessage(1, 'Account information has updated');
 
 
 
