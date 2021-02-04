@@ -59,6 +59,6 @@ $link = $_GET['link'];
     </div>
 </form>
 <script src="../script/hamburger.js"></script>
-<script src="../script/edit_post.js"></script>
+<script src="../script/edit_post_page.js"></script>
 
 <?php createMessage(3) ?>

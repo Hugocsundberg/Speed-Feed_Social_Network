@@ -30,8 +30,8 @@
 .hamburger_expanded {
   position: absolute;
   background: rgba(255, 0, 0, 0.781);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(var(--backdrop-blur));
+  -webkit-backdrop-filter: blur(var(--backdrop-blur));
   height: 100%;
   width: 100%;
   border-radius: 0px;
@@ -82,7 +82,8 @@ a {
 .sort-by {
   position: relative;
     width: fit-content;
-  background: #0085ff;
+  background: rgb(57 149 234);
+  font-weight: bold;
   border-radius: 50rem;
   color: white;
   text-align: center;
@@ -93,7 +94,7 @@ a {
 }
 
 .select-container {
-  max-width: 30rem;
+  max-width: 28rem;
   width: 100%;
   margin: 0 1rem;
   width: calc(100% - 2rem);
@@ -142,7 +143,8 @@ a {
     margin-left: 1.66rem;
     margin-top: 1.66rem;
     width: unset;
-    transition: .5s;
+    transition: .25s;
+    transition-timing-function: cubic-bezier(0.44, 0.06, 0.41, 1.25);
   }
 
   .hamburger_text_container h1:hover {

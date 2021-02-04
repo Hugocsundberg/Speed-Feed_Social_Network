@@ -125,6 +125,12 @@ $posts = $result->fetchAll(PDO::FETCH_ASSOC);
             } else {
                 $userName = 'IHaveNoName';
             }
+            $arrowPositionClass = "";
+            if (!isset($_SESSION['user']) || $post['user_id'] !== $_SESSION['user']['id']) {
+                $arrowPositionClass = "arrowSectionMoveDown";
+            } else {
+                $arrowPositionClass = "arrowSectionMoveUp";
+            }
 
 
 
@@ -152,7 +158,7 @@ $posts = $result->fetchAll(PDO::FETCH_ASSOC);
                         <p><?= $post['body'] ?></p>
                     </div>
 
-                    <div class="text-section-vote" data-post="<?= $post['id'] ?>">
+                    <div class="<?= $arrowPositionClass ?> text-section-vote" data-post="<?= $post['id'] ?>">
                         <div class="upvote-section img-container press-bounce">
                             <img class="upvote <?= $hasLiked ? 'upvote-active' : 'upvoteInactive' ?>" src="<?= $upvoteImage ?>" alt="">
                         </div>
@@ -168,8 +174,8 @@ $posts = $result->fetchAll(PDO::FETCH_ASSOC);
                     </div>
                     <?php if (isset($_SESSION['user']) && $post['user_id'] === $_SESSION['user']['id']) : ?>
                         <div class="right">
-                            <button class="post-edit-button press-bounce">Edit</button>
-                            <button class="post-delete-button press-bounce">Delete</button>
+                            <button class="button post-edit-button press-bounce">Edit</button>
+                            <button class="button post-delete-button press-bounce">Delete</button>
                         </div>
                     <?php endif ?>
                 </div>

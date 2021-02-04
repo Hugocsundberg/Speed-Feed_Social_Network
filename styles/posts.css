@@ -15,10 +15,7 @@
 :root {
   font-size: 16px;
   font-family: Raleway;
-  /* Variables */
-  --backdrop-blur: 10px;
-  --post-background-color: rgba(255, 255, 255, 0.747);
-  --box-shadow: 0px 0px 43px -12px rgba(184, 184, 184, 0.75);
+
 }
 
 .post-flex-container {
@@ -30,7 +27,7 @@
 }
 
 .post {
-  max-width: 30rem;
+  max-width: 28rem;
   backdrop-filter: blur(var(--backdrop-blur));
   -webkit-backdrop-filter: blur(var(--backdrop-blur));
   display: flex;
@@ -59,7 +56,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-left: 1rem;
+  margin-left: .5rem;
   height: 2rem;
   position: relative;
 }
@@ -67,7 +64,7 @@
   display: flex;
   flex-direction: row;
   height: 100%;
-  margin-right: 1rem;
+  margin-right: .75rem;
   position: relative;
 }
 
@@ -239,7 +236,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-right: 1rem;
+  margin-right: .5rem;
 }
 
 .bottom-section .left button {
@@ -251,18 +248,16 @@
 
 .bottom-section .right .edit-button,
 .post-edit-button {
-  border-radius: 5rem;
-  background-color: rgb(0, 132, 255);
+  background: rgb(57 149 234);
   appearance: none;
   border: none;
-  margin-right: 1rem;
-  padding: 0.3rem 0.6rem;
+  margin-right: .5rem;
+  padding: 0.3rem 1rem;
 }
 
 .bottom-section .right .delete-button,
 .post-delete-button {
-  border-radius: 5rem;
-  background-color: rgb(255, 0, 0);
+  background: rgba(255, 0, 0, 0.781);
   appearance: none;
   padding: 0.3rem 0.6rem;
   border: none;
@@ -271,7 +266,7 @@
 /* Comment */
 .comment {
   justify-content: space-evenly;
-  max-width: 28rem;
+  max-width: 26rem;
   width: calc(100% - 6rem);
   position: relative;
   display: flex;
@@ -293,25 +288,30 @@
 }
 
 .comment .upper .right {
+  position: relative;
+    top: .3rem;
   margin-right: 1rem;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
 }
 
 .comment .upper .left {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  margin-left: 1rem;
+  align-items: flex-start;
+  margin-left: .5rem;
 }
 .comment .upper .left img {
   height: 1.2rem;
   width: 1.2rem;
   border-radius: 50%;
+  margin-top: .5rem;
 }
 .comment .upper .left .name {
-  margin-left: 1rem;
+  margin-left: .5rem;
+  margin-top: .577rem;
+  font-weight: bold;
 }
 .comment .lower {
   display: flex;
@@ -319,19 +319,23 @@
   /* height: 2.5rem; */
 }
 
+p.comment-paragraph {
+  margin-bottom: .5rem;
+}
+
 .comment .lower .right {
+  align-items: flex-end;
   display: flex;
   justify-content: center;
-  align-items: center;
-  margin-right: 1rem;
+  margin-right: .5rem;
 }
 
 .comment .lower .right .edit-button {
-  margin-right: 1rem;
-  background: rgb(0, 132, 255);
+  margin-right: .5rem;
+  background: rgb(57 149 234);
 }
 .comment .lower .right .delete-button {
-  background: #f00;
+  background: rgba(255, 0, 0, 0.781);
 }
 
 .comment .lower .left {
@@ -356,11 +360,16 @@ input.comment-paragraph {
 }
 
 .button {
-  border-radius: 5rem;
+  /* margin-bottom: .5rem; */
+  bottom: .5rem;
+  height: 2.3rem;
+  border-radius: 1rem;
   appearance: none;
   border: none;
-  padding: 0.3rem 0.6rem;
+  padding: 0.3rem 1rem;
   color: white;
+  font-weight: bold;
+  position: relative;
 }
 
 /* Create post  */
@@ -412,3 +421,12 @@ form input.link-button {
   font-size: 1rem;
   transition: .25s;
 }
+
+.arrowSectionMoveDown {
+  transform: translate(0px, 1.2rem);
+}
+
+.arrowSectionMoveUp {
+  transform: translate(0px, -1rem);
+}
+

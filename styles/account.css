@@ -78,7 +78,7 @@ section.form .save {
   display: flex;
   align-items: center;
   justify-content: center;font-weight: bold;
-  transition: .5s;
+  transition: .25s;
 }
 
 .inactive {
