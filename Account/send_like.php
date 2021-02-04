@@ -73,7 +73,7 @@ if (isset($getLikes_result['id']) && $getLikes_result['up_down'] === 1) {  //Pos
     $response->post_likes = $LikesSum;
     $response->type = 1;
     $response->addedlikeCount = -1;
-    $response->message = 'You have downvoted this post';
+    $response->message = 'Your upvote was removed';
     $JSON_response = json_encode($response);
     echo $JSON_response;
     die();
