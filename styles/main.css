@@ -29,7 +29,7 @@ body {
 }
 
 .press-bounce {
-    transition: .2s;
+    transition: .25s;
 }
 
 .press-bounce:active {

@@ -60,12 +60,13 @@ if (isset($_SESSION['user'])) {
     <div class="link-submit-container">
         <label class="link-label" for="link">Link</label>
         <input class="link-input input-field" placeholder="http://example.com" type="text" name="link" id="link">
-        <input class="link-button" type="submit" value="Post">
+        <input class="inactive link-button" type="submit" value="Post">
     </div>
 </form>
 <script src="../script/hamburger.js"></script>
 <script src="../script/image_upload.js"></script>
 <script src="../script/preview_image_post.js"></script>
 <script src="../script/count_up.js"></script>
+<script src="../script/create_post.js"></script>
 
 <?php createMessage(3) ?>

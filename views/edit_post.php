@@ -19,7 +19,7 @@ $link = $_GET['link'];
 //Database connection
 // $db = new PDO('sqlite:../hacker_news_database.sqlite3');
 ?>
-<form action="/Account/update_post.php" method="post">
+<form class="create-post-form" action="/Account/update_post.php" method="post">
     <div class="post">
         <div class="date-section">
             <div class="left">
@@ -40,22 +40,25 @@ $link = $_GET['link'];
             </div>
             <div class="text-section-vote">
                 <div class="img-container">
-                    <img class="upvote" src="/assets/up-arrow.svg" alt="">
+                    <img class="upvote" src="/images/upvote.svg" alt="">
                 </div>
                 <p>42</p>
                 <div class="img-container">
-                    <img class="downvote" src="/assets/down-arrow.svg" alt="">
+                    <img class="downvote" src="/images/downvote.svg" alt="">
                 </div>
             </div>
         </div>
         <div class="bottom-section">
         </div>
     </div>
-    <label for="link">Link</label>
-    <input value="<?= $link ?>" type="text" name="link" id="link">
-    <input type="text" class="hidden" name="id" value="<?= $postId ?> ">
-    <input type="submit" value="Update">
+    <div class="link-submit-container">
+        <label class="link-label" for="link">Link</label>
+        <input class="link-input input-field" value="<?= $link ?>" type="text" name="link" id="link">
+        <input type="text" class="hidden" name="id" value="<?= $postId ?> ">
+        <input class="inactive link-button" type="submit" value="Update">
+    </div>
 </form>
 <script src="../script/hamburger.js"></script>
+<script src="../script/edit_post.js"></script>
 
 <?php createMessage(3) ?>

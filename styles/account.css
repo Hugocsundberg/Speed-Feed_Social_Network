@@ -84,7 +84,6 @@ section.form .save {
 .inactive {
   background: transparent !important;
   pointer-events: none;
-
   background: #f3f3f3c9 !important;
   color: rgb(196, 196, 196) !important;
   backdrop-filter: blur(3px);
