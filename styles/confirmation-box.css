@@ -1,10 +1,11 @@
 .message-box-container {
+    font-weight: bold;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     position: absolute;
     width: 17rem;
-    border-radius: 2rem;
+    border-radius: 1.5rem;
     backdrop-filter: blur(10px);
     display: flex;
     flex-direction: column;
@@ -16,11 +17,10 @@
 }
 
 .message-box-container *{
-    height: 5rem;
 }
 
 .message-box-container .upper p {
-    display: contents;
+    text-align: center;
 }
 
 .message-box-container .upper {
@@ -32,24 +32,31 @@
 .message-box-container .lower {
 display: flex;
 flex-direction: row;
-justify-content: space-evenly;
-align-items: center;
+justify-content: space-between;
+align-items: flex-end;
+height: 4rem;
+box-sizing: border-box;
 }
 
 .message-box-container .lower button {
     border: none;
-    border-radius: 1rem;
-    height: fit-content;
+    border-radius: .5rem .5rem 1.5rem .5rem;
+    height: 3.5rem;
     padding: 1rem;
     color: white;
+    width: 7.75rem;
 }
 
 .message-box-container .lower button.reject {
 background: rgb(255, 0, 0);
+left: .5rem;
+border-radius: .5rem .5rem .5rem 1.5rem;
 }
 
 .message-box-container .lower button.confirm {
 background: rgb(22, 122, 253);
+right: .5rem;
+border-radius: .5rem .5rem 1.5rem .5rem;
 }
 
 .full-cover {

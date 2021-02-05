@@ -4,6 +4,7 @@ const editComment = (e) => {
     const comment = e.target.parentElement.parentElement.parentElement
     const postid = comment.dataset.postid
     const commentId = comment.dataset.id
+    const editButton = document.querySelector(`.comment-id${commentId} .lower .right button.edit-button`)
     const paragraph = document.querySelector(`.comment.post${postid}.comment-id${commentId} .lower .left p`)
     const previousValue = paragraph.innerText
     const parentElement = paragraph.parentElement
@@ -16,22 +17,32 @@ const editComment = (e) => {
     newElement.classList.add('comment-paragraph')
     parentElement.insertBefore(newElement, paragraph)
     paragraph.remove()
+    //Alter Edit Comment
+    //Change text
+    editButton.innerText = 'Done'
+    //Add event listener sendComment
+    const newEditButton = editButton.cloneNode(true);
+    newEditButton.addEventListener(('click'), sendComment)
+    editButton.insertAdjacentElement('beforebegin', newEditButton)
+    editButton.remove()
+
     //button 
-    const newButton = document.createElement('button')
-    newButton.classList.add('editCommentSubmitButton')
-    newButton.classList.add('comment-submit')
-    newButton.classList.add('button')
-    newButton.innerText = "Update"
-    newElement.insertAdjacentElement('afterEnd', newButton)
-    newButton.addEventListener(('click'), sendComment)
+    // const newButton = document.createElement('button')
+    // newButton.classList.add('editCommentSubmitButton')
+    // newButton.classList.add('comment-submit')
+    // newButton.classList.add('button')
+    // newButton.innerText = "Update"
+    // newElement.insertAdjacentElement('afterEnd', newButton)
+    // 
 
 
 }
 const sendComment = (e) => {
+    e.preventDefault()
     const button = e.target;
     const commentId = e.target.parentElement.parentElement.parentElement.dataset.id
     const comment = e.target.parentElement.parentElement.parentElement
-    const value = button.previousSibling.value
+    const value = document.querySelector(`.comment-id${commentId} .lower .left input`).value
     const postId = comment.dataset.postid
 
     //Send data to backend 

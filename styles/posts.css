@@ -214,6 +214,19 @@
 }
 
 /* bottom section */
+.button {
+  /* margin-bottom: .5rem; */
+  bottom: .5rem;
+  height: 2.3rem;
+  border-radius: 1rem;
+  appearance: none;
+  border: none;
+  padding: 0.3rem 1rem;
+  color: white;
+  font-weight: bold;
+  position: relative;
+}
+
 .bottom-section {
   height: 2rem;
   display: flex;
@@ -253,6 +266,7 @@
   border: none;
   margin-right: .5rem;
   padding: 0.3rem 1rem;
+  border-radius: 1rem .5rem .5rem 1rem;
 }
 
 .bottom-section .right .delete-button,
@@ -261,6 +275,7 @@
   appearance: none;
   padding: 0.3rem 0.6rem;
   border: none;
+  border-radius: .5rem 1rem 1rem .5rem;
 }
 
 /* Comment */
@@ -333,9 +348,11 @@ p.comment-paragraph {
 .comment .lower .right .edit-button {
   margin-right: .5rem;
   background: rgb(57 149 234);
+  border-radius: 1rem .5rem .5rem 1rem;
 }
 .comment .lower .right .delete-button {
   background: rgba(255, 0, 0, 0.781);
+  border-radius: .5rem 1rem 1rem .5rem;
 }
 
 .comment .lower .left {
@@ -352,24 +369,11 @@ p.comment-paragraph {
 }
 
 input.comment-paragraph {
-  border-radius: 50px;
+  border-radius: 1rem;
   border: none;
   background: #ecececad;
-  height: 70%;
-  margin-bottom: 0.1rem;
-}
-
-.button {
-  /* margin-bottom: .5rem; */
-  bottom: .5rem;
   height: 2.3rem;
-  border-radius: 1rem;
-  appearance: none;
-  border: none;
-  padding: 0.3rem 1rem;
-  color: white;
-  font-weight: bold;
-  position: relative;
+  margin-bottom: 0.5rem;
 }
 
 /* Create post  */
