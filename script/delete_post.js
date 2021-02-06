@@ -22,6 +22,19 @@ const deletePost = (e) => {
 
 }
 
+const clickHandleDeletePost = (event) => {
+        
+        const box = new ConfirmationBox('Are you sure you want to delete your post?', 'Keep it', 'Delete it')
+        box.createPopUp()
+        .then((message)=>{
+            console.log(message)
+        })
+        .catch((message)=>{
+            console.log(message)
+            deletePost(event)
+        })
+}
+
 document.querySelectorAll('.post-delete-button').forEach((button) => {
-    button.addEventListener('click', deletePost)
+    button.addEventListener('click', clickHandleDeletePost)
 })

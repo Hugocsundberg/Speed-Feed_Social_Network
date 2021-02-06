@@ -49,12 +49,18 @@ class ConfirmationBox {
         return new Promise((resolve, reject)=>{
             const handleResolve = () => {
                 resolve('User pressed ok')
-                messageElement.remove()
+                messageElement.classList.add('message-out')
+                setTimeout(() => {
+                    messageElement.remove()
+                }, 500);
 
             }
             const handleReject = () => {
                 reject('User did not press ok')
-                messageElement.remove()
+                messageElement.classList.add('message-out')
+                setTimeout(() => {
+                    messageElement.remove()
+                }, 500);
             }
 
             rejectButton.addEventListener('click', handleReject)

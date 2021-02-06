@@ -15,4 +15,4 @@ $database_port = '5432';
 $database_password = '17d71d5877ce8f94d8d912acdc727e8dd69d290548b93a22d0bc8c0b9b07489f';
 
 $db = new PDO("pgsql:host=$database_host;port=$database_port;dbname=$database_name;user=$database_user;password=$database_password");
-$db->query("DELETE FROM \"COMMENTS\" WHERE \"id\" = $commentId");
+$db->query("DELETE FROM \"Comments\" WHERE \"id\" = $commentId");

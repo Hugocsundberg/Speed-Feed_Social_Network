@@ -235,6 +235,7 @@ $posts = $result->fetchAll(PDO::FETCH_ASSOC);
     <script src="../script/sort.js"></script>
     <script src="../script/hamburger.js"></script>
     <script src="../script/functions.js"></script>
+    <script src="../script/Classes/ConfirmationBox.js"></script>
 </body>
 <?php createMessage(3) ?>
 

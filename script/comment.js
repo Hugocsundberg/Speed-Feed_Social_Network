@@ -80,8 +80,24 @@ const deleteComment = (e) => {
 
 }
 
+
+
+
+
+const clickHandleDeleteComment = (event) => {
+    const box = new ConfirmationBox('Are you sure you want to delete your comment?', 'Keep it', 'Delete it')
+    box.createPopUp()
+    .then((message)=>{
+        console.log(message)
+    })
+    .catch((message)=>{
+        console.log(message)
+        deleteComment(event)
+    })
+}
+
 document.querySelectorAll('.delete-button').forEach((button) => {
-    button.addEventListener('click', deleteComment)
+    button.addEventListener('click', clickHandleDeleteComment)
 })
 
 
