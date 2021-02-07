@@ -8,7 +8,7 @@ class Smooth {
         //Remove cover element 
         setTimeout(() => {
             coverElement.remove()
-        }, 750);
+        }, 400);
     }
 
     static exit(link) {
@@ -19,6 +19,6 @@ class Smooth {
         document.body.appendChild(coverElement)
         setTimeout(() => {
             window.location=link
-        }, 250);
+        }, 400);
     }
 }

@@ -4,11 +4,11 @@
 }
 
 .smooth-enter {
-animation: enter .75s both;
+animation: enter .4s both;
 }
 
 .smooth-exit {
-    animation: enter .25s both reverse;
+    animation: enter .4s both reverse;
     }
 
 .smooth-enter-cover {
