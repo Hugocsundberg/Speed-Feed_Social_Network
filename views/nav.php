@@ -7,28 +7,22 @@
         <div class="hamburger_text_container">
             <?php $url = $_SERVER['REQUEST_URI']; ?>
             <?php if ($url !== '/index.php') : ?>
-                <a href="/index.php">
-                    <h1 class="most-right-nav press-bounce">Start</h1>
-                </a>
+                <h1 data-link="/index.php" class="most-right-nav press-bounce">Start</h1>
             <?php endif ?>
             <?php
             if (!isset($_SESSION['user']) && $url !== '/views/login.php') : ?>
-                <a href="/views/login.php">
-                    <h1 class="press-bounce">Login/Create account</h1>
-                </a>
+                <h1 data-link="/views/login.php" class="press-bounce">Login/Create account</h1>
             <?php endif ?>
             <?php
             if (isset($_SESSION['user']) && $url !== "/views/account.php") : ?>
-                <a href="/views/account.php">
-                    <h1 class="press-bounce">Account</h1>
-                </a>
+                <h1 data-link="/views/account.php" class="press-bounce">Account</h1>
             <?php endif ?>
             <?php
             if (isset($_SESSION['user'])) : ?>
-                <a href="/account/logout.php">
-                    <h1 class="press-bounce" class="red-shadow">Logout</h1>
-                </a>
+                <h1 data-link="/views/logout.php" class="press-bounce" class="red-shadow">Logout</h1>
             <?php endif ?>
         </div>
     </div>
+    <script src="../script/Classes/Smooth.js"></script>
+    <script src="../script/smoothRedirectNav.js"></script>
 </nav>

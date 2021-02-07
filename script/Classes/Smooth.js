@@ -8,14 +8,17 @@ class Smooth {
         //Remove cover element 
         setTimeout(() => {
             coverElement.remove()
-        }, 1500);
+        }, 750);
     }
 
-    static exit() {
+    static exit(link) {
         //Create cover element
         const coverElement = document.createElement('div')
         coverElement.classList.add('smooth-exit')
         coverElement.classList.add('smooth-enter-cover')
         document.body.appendChild(coverElement)
+        setTimeout(() => {
+            window.location=link
+        }, 250);
     }
 }

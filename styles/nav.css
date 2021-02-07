@@ -102,7 +102,7 @@ a {
   width: calc(100% - 2rem);
 }
 
-.content-container a {
+.content-container button {
   height: 2rem;
   background: var(--color-standard-blue);
   display: flex;

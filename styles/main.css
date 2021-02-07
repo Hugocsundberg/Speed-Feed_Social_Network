@@ -1,3 +1,27 @@
+@font-face {
+  font-family: Raleway;
+  src: url(/assets/fonts/Raleway/static/Raleway-Light.ttf);
+}
+@font-face {
+  font-family: Raleway;
+  src: url(/assets/fonts/Raleway/static/Raleway-Bold.ttf);
+  font-weight: bold;
+}
+@font-face {
+  font-family: Source_Sans_Pro;
+  src: url(/assets/fonts/Source_sans_pro/SourceSansPro-Regular.ttf);
+  font-weight: normal;
+}
+@font-face {
+  font-family: Source_Sans_Pro;
+  src: url(/assets/fonts/Source_sans_pro/SourceSansPro-SemiBold.ttf);
+  font-weight: bold;
+}
+
+* {
+  font-family: Source_Sans_Pro;
+}
+
 body {
   margin: 4rem 0 0 0;
   padding: 0;
@@ -43,10 +67,10 @@ body {
 }
 
 .input-field {
-  background: #f3f3f3c9;
-  color: rgb(73, 73, 73);
-  backdrop-filter: blur(3px);
-  -webkit-backdrop-filter: blur(3px);
+  background: rgb(255 255 255 / 0.382);
+  box-shadow: var(--box-shadow);
+  backdrop-filter: blur(var(--backdrop-blur));
+  -webkit-backdrop-filter: blur(var(--backdrop-blur));
   border: none;
   border-radius: 0.6rem;
   outline: none;

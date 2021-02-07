@@ -4,8 +4,12 @@
 }
 
 .smooth-enter {
-animation: enter 1.5s both;
+animation: enter .75s both;
 }
+
+.smooth-exit {
+    animation: enter .25s both reverse;
+    }
 
 .smooth-enter-cover {
     z-index: 1000;

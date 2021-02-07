@@ -4,9 +4,9 @@
   align-items: center;
 }
 
-body.login-body {
+/* body.login-body {
   background: url(/images/Scattered-Forcefields.svg);
-}
+} */
 
 .login-view form {
   display: flex;

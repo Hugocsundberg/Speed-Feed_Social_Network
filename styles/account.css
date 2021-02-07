@@ -3,9 +3,9 @@
   top: 7rem;
 }
 
-body.accountBody {
+/* body.accountBody {
   background: url(/images/Scattered-Forcefields.svg);
-}
+} */
 
 section.form {
   display: flex;
@@ -36,6 +36,7 @@ section.top .edit-image-button {
   /* margin-left: 10rem; */
   padding: 0.3rem 0.6rem;
   font-size: 0.72rem;
+  font-weight: bold;
   flex-grow: 0;
 }
 
