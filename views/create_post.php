@@ -38,7 +38,7 @@ if (isset($_SESSION['user'])) {
         </div>
         <div class="image-section imageUploadSection">
             <img class="image-upload-placeholder" src="/images/image-placeholder-landing.svg" alt="">
-            <p>Click to upload image</p>
+            <p class="upload-image-text">Click to upload image</p>
             <input class="hidden" type="file" name="file" id="file">
         </div>
         <div class="text-section">

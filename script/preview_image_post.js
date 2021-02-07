@@ -7,6 +7,7 @@ imageInput.addEventListener('change', () => {
         console.log(fileReaderPost.result)
         imageElement.setAttribute('src', fileReaderPost.result)
         imageElement.style.objectFit = "cover"
+        document.querySelector('.image-section .upload-image-text').remove()
     }
     
     fileReaderPost.readAsDataURL(imageInput.files[0])
