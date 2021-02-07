@@ -262,7 +262,7 @@
 
 .bottom-section .right .edit-button,
 .post-edit-button {
-  background: rgb(57 149 234);
+  background: var(--color-standard-blue);
   appearance: none;
   border: none;
   margin-right: 0.5rem;
@@ -272,7 +272,7 @@
 
 .bottom-section .right .delete-button,
 .post-delete-button {
-  background: rgba(255, 0, 0, 0.781);
+  background: var(--color-standard-red);
   appearance: none;
   /* padding: 0.3rem 0.6rem; */
   border: none;
