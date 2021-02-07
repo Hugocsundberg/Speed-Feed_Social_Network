@@ -93,12 +93,14 @@ box-sizing: border-box;
 .message-box-container .lower button.reject {
 background: rgb(255, 0, 0);
 left: .5rem;
+bottom: .5rem;
 border-radius: .5rem .5rem .5rem 1.5rem;
 }
 
 .message-box-container .lower button.confirm {
 background: rgb(22, 122, 253);
 right: .5rem;
+bottom: .5rem;
 border-radius: .5rem .5rem 1.5rem .5rem;
 }
 

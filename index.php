@@ -44,7 +44,6 @@ $posts = $result->fetchAll(PDO::FETCH_ASSOC);
 <body>
 
     <?php require(__DIR__ . '/views/nav.php') ?>
-    <script src="../script/Classes/Smooth.js"></script>
     <script src="../script/landing.js"></script>
     <div class="post-flex-container">
         <div class="content-container">
@@ -213,7 +212,7 @@ $posts = $result->fetchAll(PDO::FETCH_ASSOC);
                             <p class="name"><?= $commenter_name ?></p>
                         </div>
                         <div class="right">
-                            <p class="date"><?= date('D M Y H:i', $comment['date']) ?></p>
+                            <p class="date">Date: <?= date('d-m-y', $comment['date']) ?></p>
                         </div>
                     </div>
                     <div class="lower">
@@ -240,7 +239,7 @@ $posts = $result->fetchAll(PDO::FETCH_ASSOC);
     <script src="../script/sort.js"></script>
     <script src="../script/hamburger.js"></script>
     <script src="../script/functions.js"></script>
-    <script src="../script/Classes/Smooth.js"></script>
+    <script src="../script/smoothRedirectButtons.js"></script>
     <script src="../script/Classes/ConfirmationBox.js"></script>
 </body>
 <?php createMessage(3) ?>

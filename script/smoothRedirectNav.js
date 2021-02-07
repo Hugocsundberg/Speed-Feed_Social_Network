@@ -7,3 +7,11 @@ linkList.forEach(element => {
         Smooth.exit(link)
     })
 });
+
+logo = document.querySelector('img.logo')
+console.log(logo)
+
+    const logoLink = "/index.php"
+    logo.addEventListener('click', ()=>{
+        Smooth.exit(logoLink)
+    })
