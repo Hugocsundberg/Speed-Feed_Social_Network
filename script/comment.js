@@ -41,9 +41,10 @@ const newComment = (e) => {
                 commentDiv.setAttribute('data-id', clickedPost.dataset.postid)
                 postFlexContainer.insertBefore(commentDiv, lastComment.nextElementSibling)
                 const submitButton = document.querySelector('.comment-submit')
+                submitButton.classList.add('press-bounce')
                 submitButton.addEventListener(('click'), submitComment)
             } else {
-                alert('You have to log in to comment')
+                logMessage(2, 'You have to log in to comment')
             }
         })
 

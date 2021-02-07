@@ -81,10 +81,10 @@ a {
 
 .sort-by {
   position: relative;
-    width: fit-content;
+  width: fit-content;
   background: rgb(57 149 234);
   font-weight: bold;
-  border-radius: 50rem;
+  border-radius: 1rem;
   color: white;
   text-align: center;
   outline: none;
@@ -93,12 +93,28 @@ a {
   box-shadow: 0px 0px 51px -17px rgba(0, 133, 255, 1);
 }
 
-.select-container {
-  max-width: 28rem;
+.content-container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 26rem;
   width: 100%;
   margin: 0 1rem;
   width: calc(100% - 2rem);
-  margin-bottom: -3rem;
+}
+
+.content-container a {
+  height: 2rem;
+  background: var(--color-standard-blue);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 0;
+  background: rgb(255 132 0);
+}
+
+.page-headline {
+  text-align: start;
+  font-size: 3rem;
 }
 
 @media (min-width: 1100px) {
@@ -114,7 +130,7 @@ a {
     box-shadow: var(--box-shadow);
   }
 
-  .hamburger-menu.hamburger .hamburger_text_container{
+  .hamburger-menu.hamburger .hamburger_text_container {
     width: fit-content;
     height: 4rem;
     overflow: initial;
@@ -143,7 +159,7 @@ a {
     margin-left: 1.66rem;
     margin-top: 1.66rem;
     width: unset;
-    transition: .25s;
+    transition: 0.25s;
     transition-timing-function: cubic-bezier(0.44, 0.06, 0.41, 1.25);
   }
 

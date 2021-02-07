@@ -1,43 +1,50 @@
-
 @keyframes message {
-    0% {transform: translateY(-5rem);}
-    20% {transform: translateY(0);}
-    80% {transform: translateY(0);}
-    100% {transform: translateY(-5rem);}
+  0% {
+    transform: translateY(-5rem);
+  }
+  20% {
+    transform: translateY(0);
+  }
+  80% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-5rem);
+  }
 }
 
 .message-container {
-    position: fixed;
-    width: 100vw;
-    min-height: 2rem;
-    top: 1rem;
-    z-index: 2200;
-    pointer-events: none;
-    display: flex;
-    justify-content: center;
+  position: fixed;
+  width: 100vw;
+  min-height: 2rem;
+  top: 1rem;
+  z-index: 2200;
+  pointer-events: none;
+  display: flex;
+  justify-content: center;
 }
 
 .message-box {
-    width: 100%;
-    max-width: 28rem;
-    height: 3rem;
-    margin-left: 1rem;
-    margin-right: 1rem;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border-radius: 1rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-weight: bold;
-    animation: message 5s both;
+  width: 100%;
+  max-width: 26rem;
+  height: 3rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+  animation: message 5s both;
 }
 
 .info-message {
-    background: #0084ffcb;
+  background: #0084ffcb;
 }
 
 .error-message {
-    background: #FF0000cb;
+  background: #ff0000cb;
 }

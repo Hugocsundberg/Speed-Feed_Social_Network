@@ -38,21 +38,25 @@ $posts = $result->fetchAll(PDO::FETCH_ASSOC);
 
 
 
+
 ?>
 
 <body>
-    <?php require(__DIR__ . '/views/nav.php') ?>
 
+    <?php require(__DIR__ . '/views/nav.php') ?>
+    <script src="../script/Classes/Smooth.js"></script>
+    <script src="../script/landing.js"></script>
     <div class="post-flex-container">
-        <div class="select-container">
+        <div class="content-container">
             <select class="sort-by" name="sort" id="">
                 <option <?php if ($sort_by === 'new') {
                             echo 'selected';
-                        } ?>value="new">New 💎</option>
+                        } ?>value="new">Sort by: New 💎</option>
                 <option <?php if ($sort_by === 'mostupvoted') {
                             echo 'selected';
-                        } ?> value="mostupvoted">Likes 💯</option>
+                        } ?> value="mostupvoted">Sort by: Upvotes 💯</option>
             </select>
+            <a href="/views/create_post.php" class="button press-bounce">Create Post</a>
         </div>
         <?php foreach ($posts as $post) : ?>
             <?php
@@ -136,6 +140,7 @@ $posts = $result->fetchAll(PDO::FETCH_ASSOC);
 
 
             ?>
+
 
             <div data-postId="<?= $postId ?>" class="post id<?= $postId ?> post-group<?= $postId ?>">
                 <div class="date-section">

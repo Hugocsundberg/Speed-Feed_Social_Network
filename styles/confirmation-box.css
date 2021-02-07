@@ -41,14 +41,14 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    position: absolute;
+    position: fixed;
     width: 17rem;
     border-radius: 1.5rem;
     backdrop-filter: blur(10px);
     display: flex;
     flex-direction: column;
     box-shadow: var(--box-shadow);
-    /* background: rgba(228, 228, 228, 0.541); */
+    background: rgba(255, 255, 255, 0.541);
     overflow: hidden;
     z-index: 1000;
     pointer-events: all;

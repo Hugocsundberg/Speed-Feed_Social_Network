@@ -29,11 +29,13 @@ class ConfirmationBox {
         const rejectButton = document.createElement('button')
         rejectButton.classList.add('button')
         rejectButton.classList.add('reject')
+        rejectButton.classList.add('press-bounce')
         rejectButton.innerText=this.noText
         //Confirm button
         const confirmButton = document.createElement('button')
         confirmButton.classList.add('button')
         confirmButton.classList.add('confirm')
+        confirmButton.classList.add('press-bounce')
         confirmButton.innerText=this.yesText
         //Append 
         lowerElement.appendChild(rejectButton)

@@ -3,6 +3,10 @@
   top: 7rem;
 }
 
+body.accountBody {
+  background: url(/images/Scattered-Forcefields.svg);
+}
+
 section.form {
   display: flex;
   flex-direction: column;

@@ -15,7 +15,6 @@
 :root {
   font-size: 16px;
   font-family: Raleway;
-
 }
 
 .post-flex-container {
@@ -27,7 +26,7 @@
 }
 
 .post {
-  max-width: 28rem;
+  max-width: 26rem;
   backdrop-filter: blur(var(--backdrop-blur));
   -webkit-backdrop-filter: blur(var(--backdrop-blur));
   display: flex;
@@ -38,10 +37,11 @@
   margin-bottom: 1rem;
   margin-top: 1rem;
   box-shadow: var(--box-shadow);
+  background: rgb(255 255 255 / 0.382)
 }
 
 .post:not(:first-of-type) {
-  margin-top: 4rem;
+  margin-top: 1rem;
 }
 
 /* Date section */
@@ -56,7 +56,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-left: .5rem;
+  margin-left: 0.5rem;
   height: 2rem;
   position: relative;
 }
@@ -64,7 +64,7 @@
   display: flex;
   flex-direction: row;
   height: 100%;
-  margin-right: .75rem;
+  margin-right: 0.75rem;
   position: relative;
 }
 
@@ -147,14 +147,18 @@
 
 .text-section .text-section-text {
   width: 70%;
+  overflow: scroll;
+  padding-right: 1rem;
 }
 
 .text-section .text-section-text h2 {
   margin: 0.5rem 0rem;
+  word-break: break-all;
 }
 
 .text-section .text-section-text p {
   margin: 0.5rem 0rem;
+  word-break: break-all;
 }
 
 .text-section .text-section-vote {
@@ -216,7 +220,7 @@
 /* bottom section */
 .button {
   /* margin-bottom: .5rem; */
-  bottom: .5rem;
+  bottom: 0.5rem;
   height: 2.3rem;
   border-radius: 1rem;
   appearance: none;
@@ -225,6 +229,7 @@
   color: white;
   font-weight: bold;
   position: relative;
+  font-size: 0.85rem;
 }
 
 .bottom-section {
@@ -249,7 +254,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-right: .5rem;
+  margin-right: 0.5rem;
 }
 
 .bottom-section .left button {
@@ -264,9 +269,9 @@
   background: rgb(57 149 234);
   appearance: none;
   border: none;
-  margin-right: .5rem;
+  margin-right: 0.5rem;
   padding: 0.3rem 1rem;
-  border-radius: 1rem .5rem .5rem 1rem;
+  border-radius: 1rem 0.5rem 0.5rem 1rem;
 }
 
 .bottom-section .right .delete-button,
@@ -275,7 +280,7 @@
   appearance: none;
   padding: 0.3rem 0.6rem;
   border: none;
-  border-radius: .5rem 1rem 1rem .5rem;
+  border-radius: 0.5rem 1rem 1rem 0.5rem;
 }
 
 /* Comment */
@@ -304,7 +309,7 @@
 
 .comment .upper .right {
   position: relative;
-    top: .3rem;
+  top: 0.3rem;
   margin-right: 1rem;
   display: flex;
   justify-content: center;
@@ -315,17 +320,17 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-left: .5rem;
+  margin-left: 0.5rem;
 }
 .comment .upper .left img {
   height: 1.2rem;
   width: 1.2rem;
   border-radius: 50%;
-  margin-top: .5rem;
+  margin-top: 0.5rem;
 }
 .comment .upper .left .name {
-  margin-left: .5rem;
-  margin-top: .577rem;
+  margin-left: 0.5rem;
+  margin-top: 0.577rem;
   font-weight: bold;
 }
 .comment .lower {
@@ -335,24 +340,24 @@
 }
 
 p.comment-paragraph {
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 }
 
 .comment .lower .right {
   align-items: flex-end;
   display: flex;
   justify-content: center;
-  margin-right: .5rem;
+  margin-right: 0.5rem;
 }
 
 .comment .lower .right .edit-button {
-  margin-right: .5rem;
+  margin-right: 0.5rem;
   background: rgb(57 149 234);
-  border-radius: 1rem .5rem .5rem 1rem;
+  border-radius: 1rem 0.5rem 0.5rem 1rem;
 }
 .comment .lower .right .delete-button {
   background: rgba(255, 0, 0, 0.781);
-  border-radius: .5rem 1rem 1rem .5rem;
+  border-radius: 0.5rem 1rem 1rem 0.5rem;
 }
 
 .comment .lower .left {
@@ -423,7 +428,7 @@ form input.link-button {
   border: none;
   border-radius: 50rem;
   font-size: 1rem;
-  transition: .25s;
+  transition: 0.25s;
 }
 
 .arrowSectionMoveDown {
@@ -431,6 +436,5 @@ form input.link-button {
 }
 
 .arrowSectionMoveUp {
-  transform: translate(0px, -1rem);
+  transform: translate(0px, -.5rem);
 }
-

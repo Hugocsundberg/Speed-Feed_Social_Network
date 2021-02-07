@@ -23,6 +23,8 @@ if (isset($_SESSION['user'])) {
 //Database connection
 // $db = new PDO('sqlite:../hacker_news_database.sqlite3');
 ?>
+<script src="../script/Classes/Smooth.js"></script>
+<script src="../script/landing.js"></script>
 <form class="create-post-form" action="/account/submit_post.php" method="post" enctype='multipart/form-data'>
     <div class="post">
         <div class="date-section">
@@ -41,7 +43,7 @@ if (isset($_SESSION['user'])) {
         </div>
         <div class="text-section">
             <div class="text-section-text">
-                <input class="headline" placeholder="Headline" type="text" name="Headline" id="Headline">
+                <input class="headline" maxlength="20" placeholder="Headline" type="text" name="Headline" id="Headline">
                 <input class="body" placeholder="This is an interesting block of text" type="text" name="Body" id="Body">
             </div>
             <div class="text-section-vote">

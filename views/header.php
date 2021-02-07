@@ -13,4 +13,7 @@
     <link rel="stylesheet" href="/styles/account.css">
     <link rel="stylesheet" href="/styles/message.css">
     <link rel="stylesheet" href="/styles/confirmation-box.css">
+    <link rel="stylesheet" href="/styles/smooth_enter_exit.css">
+
+
 </head>

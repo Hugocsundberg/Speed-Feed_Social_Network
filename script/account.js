@@ -14,15 +14,12 @@ clickHandleAccountSave = () => {
     if(passwordFieldValue !== '') {
         const box = new ConfirmationBox('Are you sure you want to change your password?', 'yes', 'nah')
         box.createPopUp()
-        .then((message)=>{
-            console.log(message)
+        .then(()=>{
             formSubmit.click()
         })
-        .catch((message)=>{
-            console.log(message)
+        .catch(()=>{
         })
     } else {
-        console.log('okokok')
         formSubmit.click()
     }
 }

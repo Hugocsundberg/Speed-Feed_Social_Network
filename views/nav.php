@@ -17,11 +17,6 @@
                     <h1 class="press-bounce">Login/Create account</h1>
                 </a>
             <?php endif ?>
-            <?php if ($url !== '/views/create_post.php') : ?>
-                <a href="/views/create_post.php">
-                    <h1 class="press-bounce">Create post</h1>
-                </a>
-            <?php endif ?>
             <?php
             if (isset($_SESSION['user']) && $url !== "/views/account.php") : ?>
                 <a href="/views/account.php">

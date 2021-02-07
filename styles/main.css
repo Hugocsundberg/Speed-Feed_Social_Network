@@ -1,66 +1,63 @@
 body {
-    margin: 4rem 0 0 0;
-    padding: 0;
-    margin: 0;
-    width: 100vw;
-    /*🏞🔥 Background by SVGBackgrounds.com 🔥🏞 */
-    background: url(/images/Scattered-Forcefields.svg);
-    background-attachment: fixed;
-    box-sizing: border-box;
-    color: var(--color-text-main);
-    
-    
+  margin: 4rem 0 0 0;
+  padding: 0;
+  margin: 0;
+  width: 100vw;
+  /*🏞🔥 Background by SVGBackgrounds.com 🔥🏞 */
+  background: url(/images/Alternating-Arrowhead.svg);
+  background-attachment: fixed;
+  box-sizing: border-box;
+  color: var(--color-text-main);
+  background-size: 22rem;
 }
 
 *:focus {
-    outline: none;
+  outline: none;
 }
 
 :root {
-    font-size: 10px;
-    --color-text-main: rgb(48, 48, 48); 
-    --color-standard-blue: rgb(57 149 234);
-    --color-standard-red:  rgb(255, 0, 0);
-    --backdrop-blur: 8px;
-    --post-background-color: rgba(255, 255, 255, 0.747);
-    --box-shadow: 0px 0px 43px -12px rgba(184, 184, 184, 0.75);
+  font-size: 10px;
+  --color-text-main: rgb(48, 48, 48);
+  --color-standard-blue: rgb(57 149 234);
+  --color-standard-red: rgba(255, 0, 0, 0.781);
+  --backdrop-blur: 8px;
+  --post-background-color: rgba(255, 255, 255, 0.747);
+  --box-shadow: 0px 0px 43px -12px rgba(184, 184, 184, 0.75);
 }
 
 .hidden {
-    visibility: hidden;
-    position: absolute;
+  visibility: hidden;
+  position: absolute;
 }
 
 .press-bounce {
-    transition: .25s;
+  transition: 0.25s;
 }
 
 .press-bounce:active {
-    transform: scale(0.8);
+  transform: scale(0.8);
 }
 
 .press-bounce:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
-
-
 .input-field {
-    background: #f3f3f3c9;
-    color: rgb(73, 73, 73);
-    backdrop-filter: blur(3px);
-    -webkit-backdrop-filter: blur(3px);
-    border: none;
-    border-radius: .6rem;
-    outline: none;
-    height: 3rem;
-    width: 16rem;
-    padding-left: .5rem;
-    font-weight: 1rem;
+  background: #f3f3f3c9;
+  color: rgb(73, 73, 73);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  border: none;
+  border-radius: 0.6rem;
+  outline: none;
+  height: 3rem;
+  width: 16rem;
+  padding-left: 0.5rem;
+  font-weight: 1rem;
 }
 
 @media (min-width: 370px) {
-    :root {
-        font-size: 16px;
-    }
+  :root {
+    font-size: 16px;
+  }
 }
