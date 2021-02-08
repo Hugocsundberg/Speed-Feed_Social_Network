@@ -21,8 +21,7 @@ $profileImgSource = $_GET['profile_img_source'];
 //Database connection
 // $db = new PDO('sqlite:../hacker_news_database.sqlite3');
 ?>
-<script src="../script/Classes/Smooth.js"></script>
-<script src="../script/landing.js"></script>
+<script src="../script/enter.js"></script>
 <form id="edit-post" class="create-post-form" action="/Account/update_post.php" method="post">
     <div class="post">
         <div class="date-section">

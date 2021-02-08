@@ -8,7 +8,7 @@ class Smooth {
         //Remove cover element 
         setTimeout(() => {
             coverElement.remove()
-        }, 400);
+        }, 600);
     }
 
     static exit(link) {

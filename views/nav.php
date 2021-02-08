@@ -2,7 +2,7 @@
     <div class="logo press-bounce">
         <a href="/index.php"><img class="logo" src="/images/logo.svg" alt="Logotype 'speed feed'"></a>
     </div>
-    <div class="press-bounce hamburger-icon hamburger center-contain"></div>
+    <div class="press-bounce hamburger-icon hamburger center-contain hamburgerHamburger"></div>
     <div class="hamburger-menu hamburger">
         <div class="hamburger_text_container">
             <?php $url = $_SERVER['REQUEST_URI']; ?>
@@ -19,7 +19,7 @@
             <?php endif ?>
             <?php
             if (isset($_SESSION['user'])) : ?>
-                <h1 data-link="/views/logout.php" class="press-bounce" class="red-shadow">Logout</h1>
+                <h1 data-link="/account/logout.php" class="press-bounce" class="red-shadow">Logout</h1>
             <?php endif ?>
         </div>
     </div>

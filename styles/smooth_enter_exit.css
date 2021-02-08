@@ -4,7 +4,7 @@
 }
 
 .smooth-enter {
-animation: enter .4s both;
+animation: enter .6s both;
 }
 
 .smooth-exit {

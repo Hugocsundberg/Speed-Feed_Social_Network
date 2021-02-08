@@ -10,7 +10,7 @@
 
 .post-flex-container {
   position: relative;
-  top: 6rem;
+  top: 5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -251,13 +251,15 @@
 }
 
 .bottom-section .left button {
+  font-size: 1rem;
   position: relative;
-  bottom: .55rem;
-  height: 0;
+  height: 2.3rem;
   border: none;
   background: none;
   font-weight: bold;
   outline: none;
+  text-decoration: underline;
+  bottom: .25rem;
 }
 
 .bottom-section .right .edit-button,
@@ -281,6 +283,7 @@
 
 /* Comment */
 .comment {
+  background: rgb(255 255 255 / 0.382);
   justify-content: space-evenly;
   max-width: 24rem;
   width: calc(100% - 6rem);
@@ -295,6 +298,11 @@
   backdrop-filter: blur(var(--backdrop-blur));
   -webkit-backdrop-filter: blur(var(--backdrop-blur));
   box-shadow: var(--box-shadow);
+  transition: .5s;
+}
+
+.comment * {
+  transition: .5s;
 }
 
 .comment .upper {
@@ -313,6 +321,7 @@
 
 .comment .upper .right p.date {
   margin: 0;
+  margin-right: .3rem;
   font-weight: bold;
 }
 
@@ -359,10 +368,12 @@ p.comment-paragraph {
 }
 
 .comment .lower .left {
+  width: calc(100%);
+  margin-right: 2rem;
   margin-left: 1rem;
   border-radius: 1rem;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
 }
 
@@ -372,11 +383,13 @@ p.comment-paragraph {
 }
 
 input.comment-paragraph {
+  width: 100%;
   border-radius: 1rem;
+  padding-left: 1rem;
   border: none;
   background: #ecececad;
   height: 2.3rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 /* Create post  */

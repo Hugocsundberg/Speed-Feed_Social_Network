@@ -67,6 +67,7 @@ body {
 }
 
 .input-field {
+  font-size: 1rem;
   background: rgb(255 255 255 / 0.382);
   box-shadow: var(--box-shadow);
   backdrop-filter: blur(var(--backdrop-blur));

@@ -6,12 +6,11 @@ require('./nav.php');
 logMessage();
 // print_r($_SESSION);
 ?>
-<script src="../script/Classes/Smooth.js"></script>
-<script src="../script/landing.js"></script>
+<script src="../script/enter.js"></script>
 
 <body class="login-body">
     <div class="login-view">
-        <h2>Login</h2>
+        <img class="loginImg" src="/images/logIn.svg" alt="">
         <form action="/account/login.php" method="post">
             <Label for="Email">Email</Label>
             <input class="input-field" type="text" name="Email" id="Email">
@@ -20,9 +19,9 @@ logMessage();
             <input class="submit-button" type="submit" value="Log in! 🚪">
         </form>
 
-        <h2>OR</h2>
+        <h2 class="loginOr">OR</h2>
 
-        <h2>Create account</h2>
+        <img class="accountImg" src="/images/createAccount.svg" alt="">
         <form action="/account/create_account.php" method="post">
             <Label for="Email">Email</Label>
             <input class="input-field" type="text" name="Email" id="Email">

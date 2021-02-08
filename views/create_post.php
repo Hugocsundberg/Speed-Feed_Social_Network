@@ -23,8 +23,7 @@ if (isset($_SESSION['user'])) {
 //Database connection
 // $db = new PDO('sqlite:../hacker_news_database.sqlite3');
 ?>
-<script src="../script/Classes/Smooth.js"></script>
-<script src="../script/landing.js"></script>
+<script src="../script/enter.js"></script>
 <form class="create-post-form" action="/account/submit_post.php" method="post" enctype='multipart/form-data'>
     <div class="post">
         <div class="date-section">

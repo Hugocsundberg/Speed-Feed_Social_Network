@@ -34,8 +34,7 @@ if ($_SESSION['user']['avatar_path'] === 'default') {
 ?>
 
 <body class="accountBody">
-    <script src="../script/Classes/Smooth.js"></script>
-    <script src="../script/landing.js"></script>
+    <script src="../script/enter.js"></script>
     <form class="account-form" action="/Account/update_user.php" method="post" enctype="multipart/form-data">
         <section class="top">
             <h1>Account</h1>
