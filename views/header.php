@@ -6,12 +6,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Speed Feed</title>
-    <link rel="stylesheet" href="/styles/posts.css">
     <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="/styles/welcome.css">
+    <link rel="stylesheet" href="/styles/posts.css">
     <link rel="stylesheet" href="/styles/nav.css">
     <link rel="stylesheet" href="/styles/login.css">
     <link rel="stylesheet" href="/styles/account.css">
-    <link rel="stylesheet" href="/styles/welcome.css">
     <link rel="stylesheet" href="/styles/message.css">
     <link rel="stylesheet" href="/styles/confirmation-box.css">
     <link rel="stylesheet" href="/styles/smooth_enter_exit.css">
