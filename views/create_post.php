@@ -24,7 +24,7 @@ if (isset($_SESSION['user'])) {
 // $db = new PDO('sqlite:../hacker_news_database.sqlite3');
 ?>
 <script src="../script/enter.js"></script>
-<form class="create-post-form" action="/account/submit_post.php" method="post" enctype='multipart/form-data'>
+<form name="create-post" id="create-post" class="create-post-form" action="/account/submit_post.php" method="post" enctype='multipart/form-data'>
     <div class="post">
         <div class="date-section">
             <div class="left">
@@ -43,7 +43,7 @@ if (isset($_SESSION['user'])) {
         <div class="text-section">
             <div class="text-section-text">
                 <input class="headline" maxlength="20" placeholder="Headline" type="text" name="Headline" id="Headline">
-                <input class="body" placeholder="This is an interesting block of text" type="text" name="Body" id="Body">
+                <textarea placeholder="This is an interesting block of text" class="CreatePostbody body" type="text" name="Body" id="Body" form="create-post"></textarea>
             </div>
             <div class="text-section-vote">
                 <div class="img-container">

@@ -101,6 +101,10 @@
   cursor: pointer;
 }
 
+.standardCursor {
+  cursor: unset;
+}
+
 .image-section.imageUploadSection {
 }
 
@@ -124,7 +128,7 @@
 .image-section img.image-upload-placeholder {
   height: 100%;
   width: 100%;
-  object-fit: contain;
+  object-fit: cover;
   top: 7.5rem;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -394,7 +398,6 @@ input.comment-paragraph {
 
 /* Create post  */
 .text-section .text-section-text .headline {
-  margin-top: 1rem;
   font-size: 1.5rem;
   background: none;
   border: none;

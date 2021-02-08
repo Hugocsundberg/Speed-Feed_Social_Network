@@ -3,12 +3,12 @@ let informationChange = false
 // let imageChange = false
 // let image = false    
 const inputHeadline = document.querySelector('input.headline').value
-const inputBody = document.querySelector('input.body').value
+const inputBody = document.querySelector('textarea.CreatePostbody').value
 const inputLink = document.querySelector('input.link-input').value
 
 window.addEventListener('keydown', ()=>{
     setTimeout(()=>{
-        if(inputHeadline !== document.querySelector('input.headline').value || inputBody !== document.querySelector('input.body').value || inputLink !== document.querySelector('input.link-input').value) {
+        if(inputHeadline !== document.querySelector('input.headline').value || inputBody !== document.querySelector('textarea.CreatePostbody').value || inputLink !== document.querySelector('input.link-input').value) {
             informationChange = true
             saveButton.classList.remove('inactive')
             saveButton.classList.add('press-bounce')

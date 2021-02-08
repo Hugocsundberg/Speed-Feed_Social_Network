@@ -33,7 +33,7 @@ $profileImgSource = $_GET['profile_img_source'];
                 <p class="date"><?= 'future date' ?></p>
             </div>
         </div>
-        <div class="image-section">
+        <div class="image-section standardCursor">
             <img src="<?= $imgSource ?>" alt="">
         </div>
         <div class="text-section">

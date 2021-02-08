@@ -10,6 +10,9 @@ if(sessionStorage.welcomed !== 'true') {
     welcomeHeadline.innerText="Welcome"
     welcomeContainer.appendChild(welcomeHeadline)
     //Welcomed = true
+    setTimeout(() => {
+        welcomeContainer.remove()
+    }, 5000);
     sessionStorage.setItem('welcomed', true)
 } else {
     Smooth.enter()

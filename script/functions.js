@@ -10,5 +10,8 @@ const logMessage = (type, message) => {
     }
     newDiv.innerHTML = `<div class="message-box ${typeClass}"> <p>${message}</p> </div>`
     document.body.appendChild(newDiv)
+    setTimeout(() => {
+        newDiv.remove()
+    }, 5000);
 }
 
