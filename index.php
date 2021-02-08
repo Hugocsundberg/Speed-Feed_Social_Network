@@ -120,7 +120,13 @@ $posts = $result->fetchAll(PDO::FETCH_ASSOC);
             $postUserId = $post['user_id'];
             $result = $db->query("SELECT * FROM \"Users\" WHERE \"id\" = $postUserId");
             $user = $result->fetch(PDO::FETCH_ASSOC);
-            isset($user['avatar_path']) ? $avatarPath = $user['avatar_path'] : $avatarPath = '/account/uploads/default.svg';
+
+            if ($user['avatar_path'] === 'default') {
+                $avatarPath = '/account/uploads/default.svg';
+            } else {
+                $avatarPath = $user['avatar_path'];
+            }
+
 
             //If user has a name, set it to $userName
             if (isset($user['name'])) {
@@ -196,7 +202,12 @@ $posts = $result->fetchAll(PDO::FETCH_ASSOC);
                 $commenterId = $comment['user_id'];
                 $result = $db->query("SELECT * FROM \"Users\" WHERE \"id\" = $commenterId");
                 $commenter = $result->fetch(PDO::FETCH_ASSOC);
-                isset($commenter['avatar_path']) ? $commentImageURL = $commenter['avatar_path'] : $commentImageURL = '/account/uploads/default.svg';
+
+                if ($commenter['avatar_path'] === 'default') {
+                    $commentImageURL = '/account/uploads/default.svg';
+                } else {
+                    $commentImageURL = $commenter['avatar_path'];
+                }
 
                 //If user has a name, set it to $userName
                 if (isset($data['name'])) {
