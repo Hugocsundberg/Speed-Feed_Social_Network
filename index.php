@@ -42,7 +42,7 @@ $posts = $result->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <body>
-
+    <script src="../script/Classes/ConfirmationBox.js"></script>
     <?php require(__DIR__ . '/views/nav.php') ?>
     <script src="../script/enter.js"></script>
     <div class="post-flex-container">
@@ -241,6 +241,7 @@ $posts = $result->fetchAll(PDO::FETCH_ASSOC);
             <?php endforeach ?>
         <?php endforeach ?>
     </div>
+
     <script src="../script/like.js"></script>
     <script src="../script/delete_post.js"></script>
     <script src="../script/edit_comment.js"></script>
@@ -251,7 +252,6 @@ $posts = $result->fetchAll(PDO::FETCH_ASSOC);
     <script src="../script/hamburger.js"></script>
     <script src="../script/functions.js"></script>
     <script src="../script/smoothRedirectButtons.js"></script>
-    <script src="../script/Classes/ConfirmationBox.js"></script>
 </body>
 <?php createMessage(3) ?>
 
