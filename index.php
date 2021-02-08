@@ -44,7 +44,7 @@ $posts = $result->fetchAll(PDO::FETCH_ASSOC);
 <body>
 
     <?php require(__DIR__ . '/views/nav.php') ?>
-    <script src="../script/landing.js"></script>
+    <script src="../script/enter.js"></script>
     <div class="post-flex-container">
         <div class="content-container">
             <select class="sort-by" name="sort" id="">
