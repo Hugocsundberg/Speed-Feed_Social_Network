@@ -33,7 +33,7 @@ if ($_FILES['file']['size'] > 0) {
     $file_extention = end($fileNameExploded);
     $file_name_new = "profile_picture" . $user_id . '.' . $file_extention;
     $file_destination = __DIR__ . '/uploads/' . $file_name_new;
-    $file_relative_path = '/Account/uploads/' . $file_name_new;
+    $file_relative_path = '/account/uploads/' . $file_name_new;
 
     if ($file_size < 3000000) {
         move_uploaded_file($file_tmp, $file_destination);
