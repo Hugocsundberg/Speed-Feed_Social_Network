@@ -1,6 +1,6 @@
 //Like
 const sendLike = (post_id) => {
-    fetch('/Account/send_like.php', {
+    fetch('/account/send_like.php', {
         credentials: "include",
         method: 'POST',
         headers: {
@@ -49,7 +49,7 @@ document.querySelectorAll('.upvote').forEach((upvote) => {
 
 //Dislike
 const sendDislike = (post_id) => {
-    fetch('/Account/send_dislike.php', {
+    fetch('/account/send_dislike.php', {
         credentials: "include",
         method: 'POST',
         headers: {

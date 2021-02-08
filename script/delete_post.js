@@ -11,7 +11,7 @@ const deletePost = (e) => {
         postId: postId
     }
 
-    window.fetch('../Account/delete_post.php', {
+    window.fetch('../account/delete_post.php', {
         body: JSON.stringify(JSONBody),
         method: 'post',
         credentials: 'include'

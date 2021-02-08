@@ -35,7 +35,7 @@ if ($_SESSION['user']['avatar_path'] === 'default') {
 
 <body class="accountBody">
     <script src="../script/enter.js"></script>
-    <form class="account-form" action="/Account/update_user.php" method="post" enctype="multipart/form-data">
+    <form class="account-form" action="/account/update_user.php" method="post" enctype="multipart/form-data">
         <section class="top">
             <h1>Account</h1>
             <img src="<?= $avatarPath ?>" alt="" class="profile-image">
