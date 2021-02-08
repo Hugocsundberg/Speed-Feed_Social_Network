@@ -1,8 +1,9 @@
 const commentButtons = document.querySelectorAll('.post-coment-button')
 
 const submitComment = (e) => {
-    const postId = e.target.parentElement.parentElement.parentElement.dataset.id
-    const value = e.target.parentElement.previousSibling.children[0].value
+    const submitButton = document.querySelector('.comment-submit')
+    const postId = submitButton.parentElement.parentElement.parentElement.dataset.id
+    const value = submitButton.parentElement.previousSibling.children[0].value
     console.log(value)
 
     const JSONBody = {
@@ -40,9 +41,19 @@ const newComment = (e) => {
                 commentDiv.innerHTML = `<div class= "upper" ><div class="left"><img src="/images/photo-1609050470947-f35aa6071497.jpeg" alt=""><p class="name">12345</p></div><div class="right"><p class="date">Tue Dec 2020 12:20</p></div></div><div class="lower"><div class="left"><input type="text" class="comment-paragraph"></input></div><div class="right"><button class="comment-submit button">Submit</button></div></div>`
                 commentDiv.setAttribute('data-id', clickedPost.dataset.postid)
                 postFlexContainer.insertBefore(commentDiv, lastComment.nextElementSibling)
+                document.querySelector('input.comment-paragraph').focus()
                 const submitButton = document.querySelector('.comment-submit')
                 submitButton.classList.add('press-bounce')
                 submitButton.addEventListener(('click'), submitComment)
+                window.addEventListener('keydown', (e)=>{
+                    if(e.key === "Enter") {
+                        submitButton.classList.add('pressed')
+                        setTimeout(() => {
+                            submitButton.classList.remove('pressed')
+                        }, 200);
+                        submitComment()
+                    }
+                })
             } else {
                 logMessage(2, 'You have to log in to comment')
             }

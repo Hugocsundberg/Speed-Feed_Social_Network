@@ -66,6 +66,10 @@ body {
   cursor: pointer;
 }
 
+.pressed {
+    transform: scale(0.8);
+}
+
 .input-field {
   font-size: 1rem;
   background: rgb(255 255 255 / 0.382);

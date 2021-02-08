@@ -22,9 +22,19 @@ const editComment = (e) => {
     editButton.innerText = 'Done'
     //Add event listener sendComment
     const newEditButton = editButton.cloneNode(true);
+    newEditButton.classList.add('editDoneButton')
     newEditButton.addEventListener(('click'), sendComment)
     editButton.insertAdjacentElement('beforebegin', newEditButton)
     editButton.remove()
+    window.addEventListener('keydown', (e) => {
+        if(e.key === "Enter") {
+            newEditButton.classList.add('pressed')
+            setTimeout(() => {
+                newEditButton.classList.remove('pressed')
+            }, 200);
+            newEditButton.click()
+        }
+    })
 
     //button 
     // const newButton = document.createElement('button')
