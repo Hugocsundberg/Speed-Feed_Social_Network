@@ -10,108 +10,106 @@
  * animation scale-in-hor-center
  * ----------------------------------------
  */
- @keyframes scale-in-hor-center {
-    0% {
-      transform: scale(0) translate(-50%, -50%);
-      transform-origin: left top;
-      opacity: 0;
-    }
-    100% {
-      transform: scale(1) translate(-50%, -50%);
-      transform-origin: left top;
-      opacity: 1;
-    }
+@keyframes scale-in-hor-center {
+  0% {
+    transform: scale(0) translate(-50%, -50%);
+    transform-origin: left top;
+    opacity: 0;
   }
- @keyframes scale-out-hor-center {
-     0% {
-         transform: scale(1) translate(-50%, -50%);
-         transform-origin: left top;
-         opacity: 1;
-        }
-   100% {
-          transform: scale(0) translate(-50%, -50%);
-          transform-origin: left top;
-          opacity: 0;
-        }
+  100% {
+    transform: scale(1) translate(-50%, -50%);
+    transform-origin: left top;
+    opacity: 1;
   }
-  
+}
+@keyframes scale-out-hor-center {
+  0% {
+    transform: scale(1) translate(-50%, -50%);
+    transform-origin: left top;
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0) translate(-50%, -50%);
+    transform-origin: left top;
+    opacity: 0;
+  }
+}
 
 .message-box-container {
-    font-weight: bold;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    position: fixed;
-    width: 17rem;
-    border-radius: 1.5rem;
-    backdrop-filter: blur(10px);
-    display: flex;
-    flex-direction: column;
-    box-shadow: var(--box-shadow);
-    background: rgba(255, 255, 255, 0.541);
-    overflow: hidden;
-    z-index: 1000;
-    pointer-events: all;
-    animation: scale-in-hor-center .5s cubic-bezier(0.42, 0, 0, 1.2) both;
+  font-weight: bold;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: fixed;
+  width: 17rem;
+  border-radius: 1.5rem;
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--box-shadow);
+  background: rgba(255, 255, 255, 0.541);
+  overflow: hidden;
+  z-index: 1000;
+  pointer-events: all;
+  animation: scale-in-hor-center 0.5s cubic-bezier(0.42, 0, 0, 1.2) both;
 }
 
 .message-out {
-    animation: scale-out-hor-center .5s cubic-bezier(0.42, 0, 0, 1.2) both;
+  animation: scale-out-hor-center 0.5s cubic-bezier(0.42, 0, 0, 1.2) both;
 }
 
-.message-box-container *{
+.message-box-container * {
 }
 
 .message-box-container .upper p {
-    text-align: center;
+  text-align: center;
 }
 
 .message-box-container .upper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .message-box-container .lower {
-display: flex;
-flex-direction: row;
-justify-content: space-between;
-align-items: flex-end;
-height: 4rem;
-box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  height: 4rem;
+  box-sizing: border-box;
 }
 
 .message-box-container .lower button {
-    border: none;
-    border-radius: .5rem .5rem 1.5rem .5rem;
-    height: 3.5rem;
-    padding: 1rem;
-    color: white;
-    width: 7.75rem;
+  border: none;
+  border-radius: 0.5rem 0.5rem 1.5rem 0.5rem;
+  height: 3.5rem;
+  padding: 1rem;
+  color: white;
+  width: 7.75rem;
 }
 
 .message-box-container .lower button.reject {
-background: rgb(255, 0, 0);
-left: .5rem;
-bottom: .5rem;
-border-radius: .5rem .5rem .5rem 1.5rem;
+  background: rgb(255, 0, 0);
+  left: 0.5rem;
+  bottom: 0.5rem;
+  border-radius: 0.5rem 0.5rem 0.5rem 1.5rem;
 }
 
 .message-box-container .lower button.confirm {
-background: rgb(22, 122, 253);
-right: .5rem;
-bottom: .5rem;
-border-radius: .5rem .5rem 1.5rem .5rem;
+  background: rgb(22, 122, 253);
+  right: 0.5rem;
+  bottom: 0.5rem;
+  border-radius: 0.5rem 0.5rem 1.5rem 0.5rem;
 }
 
 .full-cover {
-    transition: .5s;
-    height: 100vh;
-    width: 100vw;
-    backdrop-filter: blur(3px);
-    background-color: rgba(0, 0, 0, 0.295);
-    top: 0;
-    position: fixed;
-    
+  transition: 0.5s;
+  height: 100vh;
+  width: 100vw;
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  background-color: rgba(0, 0, 0, 0.295);
+  top: 0;
+  position: fixed;
 }
-
