@@ -91,6 +91,8 @@ a {
 }
 
 .sort-by {
+  height: 2rem;
+  appearance: none;
   -webkit-appearance: none;
   font-size: 0.85rem;
   position: relative;
@@ -104,6 +106,20 @@ a {
   border: none;
   padding: 0.2rem 0.4rem;
   box-shadow: 0px 0px 51px -17px rgba(0, 133, 255, 1);
+}
+
+.downArrowContainer {
+  position: relative;
+  height: 100%;
+  background: red;
+  width: 1rem;
+  left: 6.5rem;
+  background: url('/images/dArrow.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 80%;
+  top: -1.92rem;
+  pointer-events: none;
 }
 
 .content-container {

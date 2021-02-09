@@ -47,14 +47,17 @@ $posts = $result->fetchAll(PDO::FETCH_ASSOC);
     <script src="../script/enter.js"></script>
     <div class="post-flex-container">
         <div class="content-container">
-            <select class="sort-by" name="sort" id="">
-                <option <?php if ($sort_by === 'new') {
-                            echo 'selected';
-                        } ?>value="new">Sort by: New 💎</option>
-                <option <?php if ($sort_by === 'mostupvoted') {
-                            echo 'selected';
-                        } ?> value="mostupvoted">Sort by: Upvotes 💯</option>
-            </select>
+            <div class="selectContainer">
+                <select class="sort-by" name="sort" id="">
+                    <option <?php if ($sort_by === 'new') {
+                                echo 'selected';
+                            } ?>value="new">Sort by: New 💎</option>
+                    <option <?php if ($sort_by === 'mostupvoted') {
+                                echo 'selected';
+                            } ?> value="mostupvoted">Sort by: Upvotes 💯</option>
+                </select>
+                <div class="downArrowContainer"></div>
+            </div>
             <button class="button press-bounce">Create Post</button>
         </div>
         <?php foreach ($posts as $post) : ?>
@@ -121,11 +124,16 @@ $posts = $result->fetchAll(PDO::FETCH_ASSOC);
             $result = $db->query("SELECT * FROM \"Users\" WHERE \"id\" = $postUserId");
             $user = $result->fetch(PDO::FETCH_ASSOC);
 
-            if ($user['avatar_path'] === 'default') {
-                $avatarPath = '/account/uploads/default.svg';
+            if (isset($user['avatar_path'])) {
+                if ($user['avatar_path'] === 'default') {
+                    $avatarPath = '/account/uploads/default.svg';
+                } else {
+                    $avatarPath = $user['avatar_path'];
+                }
             } else {
-                $avatarPath = $user['avatar_path'];
+                $avatarPath = '/account/uploads/default.svg';
             }
+
 
 
             //If user has a name, set it to $userName
