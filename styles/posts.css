@@ -16,6 +16,7 @@
 }
 
 .post {
+  width: calc(-2rem + 100%);
   max-width: 26rem;
   backdrop-filter: blur(var(--backdrop-blur));
   -webkit-backdrop-filter: blur(var(--backdrop-blur));
