@@ -12,17 +12,25 @@ const inputBio = document.querySelector('input#bio').value
 clickHandleAccountSave = () => {
     passwordFieldValue = document.querySelector('input#password').value
     if(passwordFieldValue !== '') {
-        const box = new ConfirmationBox('Are you sure you want to change your password?', 'yes', 'nah')
+        const box = new ConfirmationBox('Are you sure you want to change your password?', 'Dont change password', 'Change password')
         box.createPopUp()
-        .then(()=>{
-            formSubmit.click()
-        })
         .catch(()=>{
+            formSubmit.click()
         })
     } else {
         formSubmit.click()
     }
 }
+
+const enterKeyHandler = (e)=>{
+    if(e.key==="Enter") {
+        e.preventDefault()
+        window.removeEventListener('keydown', enterKeyHandler)
+        clickHandleAccountSave()
+    }
+}
+
+    const enterEventlistener = window.addEventListener('keydown', enterKeyHandler)
     saveButton.addEventListener('click', clickHandleAccountSave)
 
     const imageInput = document.querySelector('section.top input.input-field')

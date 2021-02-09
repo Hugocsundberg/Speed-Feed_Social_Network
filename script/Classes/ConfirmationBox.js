@@ -66,6 +66,12 @@ class ConfirmationBox {
             }
 
             rejectButton.addEventListener('click', handleReject)
+            window.addEventListener('keydown', (e)=>{
+                if(e.key === "Enter") {
+                    e.preventDefault()
+                    handleReject()
+                }
+            })
             confirmButton.addEventListener('click', handleResolve)
         })
     }
