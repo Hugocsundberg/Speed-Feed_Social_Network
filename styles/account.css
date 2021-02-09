@@ -11,6 +11,7 @@ section.form {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-bottom: 3rem;
 }
 
 section.top .input-field {
@@ -27,11 +28,11 @@ section.top .label-container {
 }
 
 .loginImg {
-height: 2.4rem;
+  height: 2.4rem;
 }
 
 .accountImg {
-height: 3.8rem;
+  height: 3.8rem;
 }
 
 section.top .edit-image-button {
@@ -91,8 +92,9 @@ section.form .save {
   font-size: 1rem;
   display: flex;
   align-items: center;
-  justify-content: center;font-weight: bold;
-  transition: .25s;
+  justify-content: center;
+  font-weight: bold;
+  transition: 0.25s;
 }
 
 .inactive {
@@ -102,7 +104,6 @@ section.form .save {
   color: rgb(196, 196, 196) !important;
   backdrop-filter: blur(3px);
   -webkit-backdrop-filter: blur(3px);
-
 }
 
 .link-submit-container {
