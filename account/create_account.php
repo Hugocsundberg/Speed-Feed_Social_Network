@@ -5,6 +5,22 @@ require('../functions.php');
 $email = $_POST['Email'];
 $password_hash = password_hash($_POST['Password'], PASSWORD_BCRYPT);
 $new = 'new';
+//If email is not correct
+if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    createMessage(2, 'Email has an incorrect format');
+    redirect('/views/login.php');
+}
+if (strlen($_POST['Password']) < 8) {
+    createMessage(2, 'Password has to be 8 characters or longer');
+    redirect('/views/login.php');
+}
+//Create message (email not correct)
+//Redirect to login
+//If password is not correct
+//Create message (password not correct)
+//Redirect to login
+
+
 
 //Check if email exists
 $database_host = 'ec2-34-251-118-151.eu-west-1.compute.amazonaws.com';
