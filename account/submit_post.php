@@ -23,10 +23,10 @@ if ($_FILES['file']['size'] > 0) {
     $file_destination = __DIR__ . '/uploads/' . $file_name_new;
     $file_relative_path = '/account/uploads/' . $file_name_new;
 
-    if ($file_size < 300000) {
+    if ($file_size < 5000000) {
         move_uploaded_file($file_tmp, $file_destination);
     } else {
-        createMessage(2, 'Image is too large :C make smol');
+        createMessage(2, 'Im sorry, upload an image smaller than 5MB');
     }
 
     echo $file_name_new;
