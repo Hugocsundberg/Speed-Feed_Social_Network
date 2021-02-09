@@ -49,5 +49,5 @@ if (isset($data['email'])) { //Email already exists
     }
 
     createMessage(1, "You are logged in as $greet");
-    redirect('/views/login.php');
+    redirect('/index.php');
 }

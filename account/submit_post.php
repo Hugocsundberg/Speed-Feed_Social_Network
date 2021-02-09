@@ -38,7 +38,7 @@ if ($_FILES['file']['size'] > 0) {
 if (isset($_SESSION['user']['name'])) {
     $userName = $_SESSION['user']['name'];
 } else {
-    $userName = 'IHaveNoName';
+    $userName = 'Anonymous';
 }
 
 if (isset($_SESSION['user']['id'])) {

@@ -31,7 +31,12 @@ const newComment = (e) => {
         .then(userJSON => {
             console.log(userJSON);
             if (userJSON !== false) {
-          
+                let profileImage
+                if(userJSON.avatar_path === 'default') {
+                    profileImage = '/account/uploads/default.svg'
+                } else {
+                    profileImage = userJSON.avatar_path
+                }
 
                 const clickedPost = e.target.parentElement.parentElement.parentElement
                 postFlexContainer = document.querySelector('.post-flex-container')
@@ -40,7 +45,7 @@ const newComment = (e) => {
                 const lastComment = commentArray[commentArray.length - 1]
                 const commentDiv = document.createElement('div')
                 commentDiv.classList.add('comment')
-                commentDiv.innerHTML = `<div class= "upper" ><div class="left"><img src="${userJSON.avatar_path}" alt=""><p class="name">${userJSON.name}</p></div><div class="right"><p class="date">now</p></div></div><div class="lower"><div class="left"><input type="text" class="comment-paragraph"></input></div><div class="right"><button class="comment-submit button">Submit</button></div></div>`
+                commentDiv.innerHTML = `<div class= "upper" ><div class="left"><img src="${profileImage}" alt=""><p class="name">${userJSON.name}</p></div><div class="right"><p class="date">now</p></div></div><div class="lower"><div class="left"><input type="text" class="comment-paragraph"></input></div><div class="right"><button class="comment-submit button">Submit</button></div></div>`
                 commentDiv.setAttribute('data-id', clickedPost.dataset.postid)
                 postFlexContainer.insertBefore(commentDiv, lastComment.nextElementSibling)
                 document.querySelector('input.comment-paragraph').focus()

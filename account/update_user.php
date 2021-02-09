@@ -79,4 +79,4 @@ createMessage(1, 'Account information has updated');
 
 
 
-redirect('/views/account.php');
+redirect('/index.php');
