@@ -23,6 +23,7 @@
             <?php endif ?>
         </div>
     </div>
+
     <script src="../script/Classes/Smooth.js"></script>
     <?php if (isset($_SESSION['user'])) : ?>
         <script src="../script/logOutConfirmation.js"></script>

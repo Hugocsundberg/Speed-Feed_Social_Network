@@ -73,6 +73,11 @@ class ConfirmationBox {
                 }
             })
             confirmButton.addEventListener('click', handleResolve)
+            setTimeout(() => {
+                window.addEventListener('click', ()=>{
+                    handleResolve()
+                })
+            }, 100);
         })
     }
         

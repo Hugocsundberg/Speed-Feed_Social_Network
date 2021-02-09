@@ -64,6 +64,7 @@ if (isset($_SESSION['user'])) {
         <input class="inactive link-button" type="submit" value="Post">
     </div>
 </form>
+<script src="../script/Classes/ConfirmationBox.js"></script>
 <script src="../script/hamburger.js"></script>
 <script src="../script/image_upload.js"></script>
 <script src="../script/preview_image_post.js"></script>

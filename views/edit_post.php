@@ -61,6 +61,7 @@ $profileImgSource = $_GET['profile_img_source'];
         <input class="inactive link-button" type="submit" value="Update">
     </div>
 </form>
+<script src="../script/Classes/ConfirmationBox.js"></script>
 <script src="../script/hamburger.js"></script>
 <script src="../script/edit_post_page.js"></script>
 
