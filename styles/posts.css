@@ -1,12 +1,11 @@
-
 /* * {
     outline: red 1px solid;
 } */
 
-:root {
+/* :root {
   font-size: 16px;
   font-family: Raleway;
-}
+} */
 
 .post-flex-container {
   position: relative;
@@ -28,7 +27,7 @@
   margin-bottom: 1rem;
   margin-top: 1rem;
   box-shadow: var(--box-shadow);
-  background: rgb(255 255 255 / 0.382)
+  background: rgb(255 255 255 / 0.382);
 }
 
 .post:not(:first-of-type) {
@@ -242,7 +241,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: .7rem;
+  margin-left: 0.7rem;
 }
 
 .bottom-section .right {
@@ -261,7 +260,7 @@
   font-weight: bold;
   outline: none;
   text-decoration: underline;
-  bottom: .25rem;
+  bottom: 0.25rem;
 }
 
 .bottom-section .right .edit-button,
@@ -300,11 +299,11 @@
   backdrop-filter: blur(var(--backdrop-blur));
   -webkit-backdrop-filter: blur(var(--backdrop-blur));
   box-shadow: var(--box-shadow);
-  transition: .5s;
+  transition: 0.5s;
 }
 
 .comment * {
-  transition: .5s;
+  transition: 0.5s;
 }
 
 .comment .upper {
@@ -323,7 +322,7 @@
 
 .comment .upper .right p.date {
   margin: 0;
-  margin-right: .3rem;
+  margin-right: 0.3rem;
   font-weight: bold;
 }
 
@@ -340,7 +339,7 @@
 .comment .upper .left .name {
   font-weight: bold;
   margin: 0;
-  margin-left: .5rem;
+  margin-left: 0.5rem;
 }
 .comment .lower {
   display: flex;
@@ -451,5 +450,5 @@ form input.link-button {
 }
 
 .arrowSectionMoveUp {
-  transform: translate(-1.17rem, -.5rem);
+  transform: translate(-1.17rem, -0.5rem);
 }
