@@ -62,5 +62,5 @@ window.addEventListener('keydown', ()=>{
             saveButton.classList.add('inactive')
             saveButton.classList.remove('press-bounce')
         }
-    }, 30)
+    }, 300)
 })
