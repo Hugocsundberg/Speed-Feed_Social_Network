@@ -77,6 +77,9 @@ class ConfirmationBox {
                 window.addEventListener('click', ()=>{
                     handleResolve()
                 })
+                window.addEventListener('touchstart', ()=>{
+                    handleResolve()
+                })
             }, 100);
         })
     }
