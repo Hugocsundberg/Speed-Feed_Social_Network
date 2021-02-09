@@ -1,5 +1,4 @@
 const linkList = document.querySelectorAll('.hamburger_text_container h1.smooth-redirect')
-console.log(linkList)
 
 linkList.forEach(element => {
     const link = element.dataset.link

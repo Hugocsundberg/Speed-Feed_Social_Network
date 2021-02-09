@@ -73,14 +73,14 @@ class ConfirmationBox {
                 }
             })
             confirmButton.addEventListener('click', handleResolve)
-            setTimeout(() => {
-                window.addEventListener('click', ()=>{
-                    handleResolve()
-                })
-                window.addEventListener('touchstart', ()=>{
-                    handleResolve()
-                })
-            }, 100);
+            // setTimeout(() => {
+            //     window.addEventListener('click', ()=>{
+            //         handleResolve()
+            //     })
+            //     window.addEventListener('touchstart', ()=>{
+            //         handleResolve()
+            //     })
+            // }, 100);
         })
     }
         
