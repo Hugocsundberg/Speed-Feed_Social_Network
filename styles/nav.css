@@ -91,6 +91,7 @@ a {
 }
 
 .sort-by {
+  -webkit-appearance: none;
   font-size: 0.85rem;
   position: relative;
   width: fit-content;
@@ -106,6 +107,7 @@ a {
 }
 
 .content-container {
+  -webkit-appearance: none;
   display: flex;
   justify-content: space-between;
   max-width: 26rem;
