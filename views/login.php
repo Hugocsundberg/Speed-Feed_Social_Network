@@ -13,9 +13,9 @@ logMessage();
         <img class="loginImg" src="/images/logIn.svg" alt="">
         <form action="/account/login.php" method="post">
             <Label for="Email">Email</Label>
-            <input class="input-field" type="text" name="Email" id="Email">
+            <input class="input-field" type="email" name="Email" id="Email" required>
             <Label for="Password">Password</Label>
-            <input class="input-field" type="password" name="Password" id="Password">
+            <input class="input-field" type="password" name="Password" id="Password" required>
             <input class="submit-button" type="submit" value="Log in! 🚪">
         </form>
 
@@ -24,9 +24,9 @@ logMessage();
         <img class="accountImg" src="/images/createAccount.svg" alt="">
         <form action="/account/create_account.php" method="post">
             <Label for="Email">Email</Label>
-            <input class="input-field" type="text" name="Email" id="Email">
+            <input class="input-field" type="email" name="Email" id="Email" required>
             <Label for="Password">Password</Label>
-            <input class="input-field" type="password" name="Password" id="Password">
+            <input minlength="8" class="input-field" type="password" name="Password" id="Password" required>
             <input class="submit-button" type="submit" value="Create! 🛠">
         </form>
     </div>
