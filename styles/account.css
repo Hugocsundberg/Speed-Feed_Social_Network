@@ -78,6 +78,7 @@ section.form label {
 }
 
 section.form .save {
+  -webkit-appearance: none;
   margin-top: 2rem;
   height: 3rem;
   width: 9rem;
