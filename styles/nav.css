@@ -7,10 +7,8 @@
   width: 2rem;
 }
 
-
 .hamburgerHamburger {
   background: url(../images/radix-icons_hamburger-menu.svg);
-  
 }
 
 .hamburgerCross {
@@ -91,12 +89,12 @@ a {
 }
 
 .sort-by {
+  width: 9rem;
   height: 2rem;
   appearance: none;
   -webkit-appearance: none;
   font-size: 0.85rem;
   position: relative;
-  width: fit-content;
   background: rgb(57 149 234);
   font-weight: bold;
   border-radius: 1rem;
@@ -108,17 +106,21 @@ a {
   box-shadow: 0px 0px 51px -17px rgba(0, 133, 255, 1);
 }
 
-.downArrowContainer {
+.selectContainer {
   position: relative;
-  height: 100%;
+}
+
+.downArrowContainer {
+  position: absolute;
+  height: 2rem;
   background: red;
   width: 1rem;
-  left: 6.5rem;
-  background: url('/images/dArrow.svg');
+  right: 0.5rem;
+  top: 0;
+  background: url("/images/dArrow.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 80%;
-  top: -1.92rem;
   pointer-events: none;
 }
 

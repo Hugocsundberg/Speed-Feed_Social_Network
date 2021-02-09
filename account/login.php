@@ -22,13 +22,25 @@ $user = $result->fetch(PDO::FETCH_ASSOC);
 if ($user) {
     if (password_verify($password, $user['password_hash'])) {
         $_SESSION['user'] = $user;
-        createMessage(1, 'You are logged in');
+
+        if (isset($user['name'])) {
+
+            if ($user['name'] === 'Anonymous') {
+                $greet = $email;
+            } else {
+                $greet = $user['name'];
+            }
+        } else {
+            $greet = $email;
+        }
+
+        createMessage(1, "You are logged in as $greet");
         redirect('/index.php');
     } else {
-        createMessage(2, 'Account exists. Tip: enter a password that is less incorrect');
+        createMessage(2, 'The password is incorrect');
         redirect('/views/login.php');
     }
 } else {
-    createMessage(2, 'Create an account bro');
+    createMessage(2, 'There is no account with this email');
     redirect('/views/login.php');
 }

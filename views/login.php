@@ -15,7 +15,7 @@ logMessage();
             <Label for="Email">Email</Label>
             <input class="input-field" type="text" name="Email" id="Email">
             <Label for="Password">Password</Label>
-            <input class="input-field" type="text" name="Password" id="Password">
+            <input class="input-field" type="password" name="Password" id="Password">
             <input class="submit-button" type="submit" value="Log in! 🚪">
         </form>
 
@@ -26,7 +26,7 @@ logMessage();
             <Label for="Email">Email</Label>
             <input class="input-field" type="text" name="Email" id="Email">
             <Label for="Password">Password</Label>
-            <input class="input-field" type="text" name="Password" id="Password">
+            <input class="input-field" type="password" name="Password" id="Password">
             <input class="submit-button" type="submit" value="Create! 🛠">
         </form>
     </div>

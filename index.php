@@ -54,7 +54,7 @@ $posts = $result->fetchAll(PDO::FETCH_ASSOC);
                             } ?>value="new">Sort by: New 💎</option>
                     <option <?php if ($sort_by === 'mostupvoted') {
                                 echo 'selected';
-                            } ?> value="mostupvoted">Sort by: Upvotes 💯</option>
+                            } ?> value="mostupvoted">Sort by: Upvotes 💯‎ </option>
                 </select>
                 <div class="downArrowContainer"></div>
             </div>
@@ -162,7 +162,7 @@ $posts = $result->fetchAll(PDO::FETCH_ASSOC);
                         <p class="name"><?= $userName ?></p>
                     </div>
                     <div class="right">
-                        <p class="date">Date: <?= date('d-m-y', $post['date']) ?></p>
+                        <p class="date">Date: <?= date('y-m-d', $post['date']) ?></p>
                     </div>
                 </div>
                 <a href="<?= $post['link'] ?>">
@@ -231,7 +231,7 @@ $posts = $result->fetchAll(PDO::FETCH_ASSOC);
                             <p class="name"><?= $commenter_name ?></p>
                         </div>
                         <div class="right">
-                            <p class="date">Date: <?= date('d-m-y', $comment['date']) ?></p>
+                            <p class="date">Date: <?= date('y-m-d', $comment['date']) ?></p>
                         </div>
                     </div>
                     <div class="lower">

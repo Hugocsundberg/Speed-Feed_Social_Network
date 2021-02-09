@@ -47,10 +47,10 @@ if ($_SESSION['user']['avatar_path'] === 'default') {
         <section class="form">
             <label for="email">Email</label>
             <input class="input-field" value="<?php echo $_SESSION['user']['email'] ?>" type="text" name="email" id="email">
-            <label for="name">Name</label>
+            <label for="name">Display name</label>
             <input class="input-field" value="<?php echo $_SESSION['user']['name'] ?>" type="text" name="name" id="name">
             <label for="password">Password</label>
-            <input class="input-field" placeholder="***********" type="text" name="password" id="password">
+            <input class="input-field" placeholder="***********" type="password" name="password" id="password">
             <label for="bio">Bio</label>
             <input class="input-field" value="<?php echo $_SESSION['user']['bio'] ?>" type="text" name="bio" id="bio">
             <input class="hidden form-account-submit" type="submit" value="hidden">

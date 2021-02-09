@@ -29,6 +29,25 @@ if (isset($data['email'])) { //Email already exists
     $stmt->bindParam(':password_hash', $password_hash);
     $stmt->bindParam(':sort_by', $new);
     $stmt->execute();
-    createMessage(2, 'Account has been created');
+
+    //Get user from database 
+    $db = new PDO("pgsql:host=$database_host;port=$database_port;dbname=$database_name;user=$database_user;password=$database_password");
+    $result = $db->query("SELECT * FROM \"Users\" WHERE \"email\" = '$email'");
+    $user = $result->fetch(PDO::FETCH_ASSOC);
+    //Bind user settings to SESSION
+    $_SESSION['user'] = $user;
+
+    if (isset($user['name'])) {
+
+        if ($user['name'] === 'Anonymous') {
+            $greet = $email;
+        } else {
+            $greet = $user['name'];
+        }
+    } else {
+        $greet = $email;
+    }
+
+    createMessage(1, "You are logged in as $greet");
     redirect('/views/login.php');
 }
