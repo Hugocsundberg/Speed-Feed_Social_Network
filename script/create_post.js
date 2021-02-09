@@ -18,5 +18,5 @@ window.addEventListener('keydown', ()=>{
             saveButton.classList.remove('press-bounce')
         }
         console.log(informationChange)
-    }, 1)
+    }, 300)
 })
