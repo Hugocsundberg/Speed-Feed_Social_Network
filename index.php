@@ -140,7 +140,7 @@ $posts = $result->fetchAll(PDO::FETCH_ASSOC);
             if (isset($user['name'])) {
                 $userName = $user['name'];
             } else {
-                $userName = 'IHaveNoName';
+                $userName = 'Anonymous';
             }
             $arrowPositionClass = "";
             if (!isset($_SESSION['user']) || $post['user_id'] !== $_SESSION['user']['id']) {
@@ -221,7 +221,7 @@ $posts = $result->fetchAll(PDO::FETCH_ASSOC);
                 if (isset($data['name'])) {
                     $commenter_name = $data['name'];
                 } else {
-                    $commenter_name = 'IHaveNoName';
+                    $commenter_name = 'Anonymous';
                 }
                 ?>
                 <div data-postId="<?= $postId ?>" data-id="<?= $commentId ?>" class="comment post<?= $postId ?> post-group<?= $postId ?> comment-id<?= $commentId ?>">
