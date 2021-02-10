@@ -140,7 +140,7 @@
 
 .text-section .text-section-text {
   width: 70%;
-  overflow: scroll;
+  overflow-y: auto;
   padding-right: 1rem;
   overflow-x: hidden;
 }
