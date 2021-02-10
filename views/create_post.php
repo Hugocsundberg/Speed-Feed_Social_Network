@@ -42,7 +42,7 @@ if (isset($_SESSION['user'])) {
         </div>
         <div class="text-section">
             <div class="text-section-text">
-                <input class="headline" maxlength="20" placeholder="Headline" type="text" name="Headline" id="Headline">
+                <input class="headline" maxlength="40" placeholder="Headline" type="text" name="Headline" id="Headline">
                 <textarea placeholder="This is an interesting block of text" class="CreatePostbody body" type="text" name="Body" id="Body" form="create-post"></textarea>
             </div>
             <div class="text-section-vote">

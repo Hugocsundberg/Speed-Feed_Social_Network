@@ -38,7 +38,7 @@ $profileImgSource = $_GET['profile_img_source'];
         </div>
         <div class="text-section">
             <div class="text-section-text">
-                <input class="headline" maxlength="20" value="<?= $headline ?>" type="text" name="headline" id="headline">
+                <input class="headline" maxlength="40" value="<?= $headline ?>" type="text" name="headline" id="headline">
                 <textarea class="body" type="text" name="body" id="body" form="edit-post"><?= $body ?></textarea>
             </div>
             <div class="text-section-vote">
