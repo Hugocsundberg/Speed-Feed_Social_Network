@@ -26,6 +26,7 @@ The app support the following features
 While the app is now (should be) fully working, it is missing some functionality. For example, it does not have a router for costum URL and 404-page. 
 It also is not as secure as it could be since i have created all logic myself. The site is for example not protected against CSRF-attacks and is probably missing other security measures found in bigger frameworks. 
 
-Also doing this again, I would chose to use a library for animations to get consistant and well-made animations throughout the app. 
+If i were to do this project again, I would probaly want to use a reactive framework like React for the frontend, and something like express or laravel for backend. 
+I would also chose to use a library for animations to get consistant and well-made animations throughout the app. 
 
 
