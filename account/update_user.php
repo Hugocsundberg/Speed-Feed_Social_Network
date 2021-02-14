@@ -77,6 +77,11 @@ if ($bio !== '') {
 
 createMessage(1, 'Account information has updated');
 
+//Get user 
+$result = $db->query("SELECT * FROM \"Users\" WHERE \"email\" = '$email'");
+$user = $result->fetch(PDO::FETCH_ASSOC);
+//Update session
+$_SESSION['user'] = $user;
 
 
 redirect('/index.php');

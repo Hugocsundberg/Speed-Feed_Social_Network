@@ -4,11 +4,8 @@ require('header.php');
 require('nav.php');
 logMessage();
 
-if (isset($_SESSION['user']['name'])) {
-    $userName = $_SESSION['user']['name'];
-} else {
-    $userName = 'Anonymous';
-}
+$userName = $_SESSION['user']['name'];
+
 
 if (isset($_SESSION['user'])) {
     if ($_SESSION['user']['avatar_path'] === 'default') {
