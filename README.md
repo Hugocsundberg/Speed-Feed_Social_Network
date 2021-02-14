@@ -28,7 +28,3 @@ It also is not as secure as it could be since i have created all logic myself. T
 
 If i were to do this project again, I would probaly want to use a reactive framework like React for the frontend, and something like express or laravel for backend. 
 I would also chose to use a library for animations to get consistant and well-made animations throughout the app. 
-
-test update
-
-
