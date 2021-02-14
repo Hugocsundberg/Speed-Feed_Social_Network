@@ -18,7 +18,7 @@ The app support the following features
 * Create account 
 * Updata account information 
 * Login/Logout
-* Create Post 
+* Create/edit/delete post 
 * Upvote/Downvote posts
 * Comment on post
 
