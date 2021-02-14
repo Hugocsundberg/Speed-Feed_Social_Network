@@ -11,9 +11,21 @@ I tried to follow those rules when i created a costom confirmation box class.
 The box is rendered from JS when the 'createPopup' method is called upon. This method returns a promise which will resolve when the user presses the the confirmation button.  
 
 ## Technology
+The technologies used in this project is only vanilla JS, CSS and HTML. The reason for this is for personal learning purposes. To get an understanding of what it takes to build a social network from scratch and an understanding of the tools used in complex libraries. 
 
 ## Features
+The app support the following features 
+* Create account 
+* Updata account information 
+* Login/Logout
+* Create Post 
+* Upvote/Downvote posts
+* Comment on post
 
 ## Thoughts/Learnings
-use library like velocity for animations
+While the app is now (should be) fully working, it is missing some functionality. For example, it does not have a router for costum URL and 404-page. 
+It also is not as secure as it could be since i have created all logic myself. The site is for example not protected against CSRF-attacks and is probably missing other security measures found in bigger frameworks. 
+
+Also doing this again, I would chose to use a library for animations to get consistant and well-made animations throughout the app. 
+
 
