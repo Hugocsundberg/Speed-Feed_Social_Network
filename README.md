@@ -14,7 +14,7 @@ The box is rendered from JS when the 'createPopup' method is called upon. This m
 The technologies used in this project is only vanilla JS, CSS and HTML. The reason for this is for personal learning purposes. To get an understanding of what it takes to build a social network from scratch and an understanding of the tools used in complex libraries. 
 
 ## Features
-The app support the following features 
+The app supports the following features 
 * Create account 
 * Updata account information 
 * Login/Logout
