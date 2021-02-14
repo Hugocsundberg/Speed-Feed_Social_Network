@@ -17,9 +17,9 @@ The technologies used in this project is only vanilla JS, CSS and HTML. The reas
 The app supports the following features 
 * Create account 
 * Updata account information 
-* Login/Logout
+* Login/logout
 * Create/edit/delete post 
-* Upvote/Downvote posts
+* Upvote/downvote posts
 * Comment on post
 
 ## Thoughts/Learnings
