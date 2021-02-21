@@ -1,13 +1,4 @@
-@font-face {
-  font-family: Raleway;
-  src: url(/assets/fonts/Raleway/static/Raleway-Light.ttf);
-}
-@font-face {
-  font-family: Raleway;
-  src: url(/assets/fonts/Raleway/static/Raleway-Bold.ttf);
-  font-weight: bold;
-}
-@font-face {
+/* @font-face {
   font-family: Source_Sans_Pro;
   src: url(/assets/fonts/Source_sans_pro/SourceSansPro-Regular.ttf);
   font-weight: normal;
@@ -15,11 +6,13 @@
 @font-face {
   font-family: Source_Sans_Pro;
   src: url(/assets/fonts/Source_sans_pro/SourceSansPro-SemiBold.ttf);
-  font-weight: bold;
-}
+  font-weight: semi-bold;
+} */
+
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap");
 
 * {
-  font-family: Source_Sans_Pro;
+  font-family: "Source Sans Pro", sans-serif;
   -webkit-appearance: none;
 }
 
@@ -68,7 +61,7 @@ body {
 }
 
 .pressed {
-    transform: scale(0.8);
+  transform: scale(0.8);
 }
 
 .input-field {
@@ -83,7 +76,7 @@ body {
   height: 3rem;
   width: 16rem;
   padding-left: 0.5rem;
-  font-weight: 1rem;
+  font-weight: normal;
 }
 
 @media (min-width: 370px) {

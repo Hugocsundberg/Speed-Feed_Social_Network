@@ -43,7 +43,7 @@
 }
 
 .date-section .left {
-  font-weight: bold;
+  font-weight: 600;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -87,7 +87,7 @@
 .date-section .right .date {
   height: 100%;
   margin: 0;
-  font-weight: bold;
+  font-weight: 600;
   /* width: ; */
 }
 
@@ -222,7 +222,7 @@
   border: none;
   padding: 0.3rem 1rem;
   color: white;
-  font-weight: bold;
+  font-weight: 600;
   position: relative;
   font-size: 0.85rem;
 }
@@ -257,7 +257,7 @@
   height: 2.3rem;
   border: none;
   background: none;
-  font-weight: bold;
+  font-weight: 600;
   outline: none;
   text-decoration: underline;
   bottom: 0.25rem;
@@ -323,7 +323,7 @@
 .comment .upper .right p.date {
   margin: 0;
   margin-right: 0.3rem;
-  font-weight: bold;
+  font-weight: 600;
 }
 
 .comment .upper .left {
@@ -337,7 +337,7 @@
   border-radius: 50%;
 }
 .comment .upper .left .name {
-  font-weight: bold;
+  font-weight: 600;
   margin: 0;
   margin-left: 0.5rem;
 }
@@ -422,7 +422,7 @@ input.comment-paragraph {
 
 form label.link-label {
   font-size: 1rem;
-  font-weight: bold;
+  font-weight: 600;
   margin-top: 1rem;
   width: 16rem;
 }

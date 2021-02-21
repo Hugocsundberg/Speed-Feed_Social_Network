@@ -1,7 +1,13 @@
 @keyframes colorShift {
-0%{background: rgb(255, 255, 255);}
-33%{background: rgba(255, 255, 255, 0.970); } /*backdrop-filter: blur(8px);*/
-100%{background: rgba(141, 38, 0, 0);}
+  0% {
+    background: rgb(255, 255, 255);
+  }
+  33% {
+    background: rgba(255, 255, 255, 0.97);
+  } /*backdrop-filter: blur(8px);*/
+  100% {
+    background: rgba(141, 38, 0, 0);
+  }
 }
 
 /* ----------------------------------------------
@@ -16,54 +22,56 @@
  * animation tracking-in-contract-bck
  * ----------------------------------------
  */
- @-webkit-keyframes tracking-in-contract-bck {
-    0% {
-      letter-spacing: 1em;
-      -webkit-transform: translateZ(400px);
-              transform: translateZ(400px);
-      opacity: 0;
-    }
-    40% {
-      opacity: 0.6;
-    }
-    100% {
-      -webkit-transform: translateZ(0);
-              transform: translateZ(0);
-      opacity: 1;
-    }
+@-webkit-keyframes tracking-in-contract-bck {
+  0% {
+    letter-spacing: 1em;
+    -webkit-transform: translateZ(400px);
+    transform: translateZ(400px);
+    opacity: 0;
   }
-  @keyframes tracking-in-contract-bck {
-    0% {
-      letter-spacing: 1em;
-      -webkit-transform: translateZ(400px);
-              transform: translateZ(400px);
-      opacity: 0;
-    }
-    40% {
-      opacity: 0.6;
-    }
-    100% {
-      -webkit-transform: translateZ(0);
-              transform: translateZ(0);
-      opacity: 1;
-    }
+  40% {
+    opacity: 0.6;
   }
+  100% {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    opacity: 1;
+  }
+}
+@keyframes tracking-in-contract-bck {
+  0% {
+    letter-spacing: 1em;
+    -webkit-transform: translateZ(400px);
+    transform: translateZ(400px);
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    opacity: 1;
+  }
+}
 
 .welcomeContainer {
-    height: 100vh;
-    width: 100vw;
-    position: fixed;
-    z-index: 2500;
-    animation: colorShift 5s forwards;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    pointer-events: none;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  z-index: 2500;
+  animation: colorShift 5s forwards;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
 }
 
 .welcomeHeadline {
-    font-size: 4rem;
-    position: fixed;
-    -webkit-animation: tracking-in-contract-bck 1.5s cubic-bezier(0.215, 0.610, 0.355, 1.000) 2 alternate both;
-    animation: tracking-in-contract-bck 1.5s cubic-bezier(0.215, 0.610, 0.355, 1.000) 2 alternate both;
+  font-size: 4rem;
+  position: fixed;
+  -webkit-animation: tracking-in-contract-bck 1.5s
+    cubic-bezier(0.215, 0.61, 0.355, 1) 2 alternate both;
+  animation: tracking-in-contract-bck 1.5s cubic-bezier(0.215, 0.61, 0.355, 1) 2
+    alternate both;
 }
