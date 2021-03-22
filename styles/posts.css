@@ -309,7 +309,7 @@
 .comment .upper {
   display: flex;
   justify-content: space-between;
-  padding: 1rem 1rem 1.5rem 1rem;
+  padding: 1rem 1rem 0rem 1rem;
 }
 
 .comment .upper .right {
@@ -391,6 +391,7 @@ input.comment-paragraph {
   background: #ecececad;
   height: 2.3rem;
   margin-bottom: 1rem;
+  margin-top: 1rem;
 }
 
 /* Create post  */
