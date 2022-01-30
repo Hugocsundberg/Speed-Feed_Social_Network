@@ -1,1 +1,3 @@
 account/uploads
+.env
+/vendor/

@@ -1,0 +1,17 @@
+{
+    "name": "hugosundberg/speed-feed_2",
+    "autoload": {
+        "psr-4": {
+            "Hugosundberg\\SpeedFeed2\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Hugo Sundberg",
+            "email": "55212646+Hugocsundberg@users.noreply.github.com"
+        }
+    ],
+    "require": {
+        "vlucas/phpdotenv": "^5.4"
+    }
+}

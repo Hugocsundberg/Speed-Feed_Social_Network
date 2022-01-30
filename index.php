@@ -1,13 +1,16 @@
 <?php
+require __DIR__ . '/vendor/autoload.php';
 require(__DIR__ . '/views/header.php');
 require(__DIR__ . '/functions.php');
-logMessage();
 
-$database_host = 'ec2-34-251-118-151.eu-west-1.compute.amazonaws.com';
-$database_name = 'd2m7cahbqat10u';
-$database_user = 'ibmysphorhuxnp';
-$database_port = '5432';
-$database_password = '17d71d5877ce8f94d8d912acdc727e8dd69d290548b93a22d0bc8c0b9b07489f';
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv->load();
+
+$database_host = $_ENV['DB_HOST'];
+$database_name = $_ENV['DB_NAME'];
+$database_user = $_ENV['DB_USER'];
+$database_port = $_ENV['DB_PORT'];
+$database_password = $_ENV['DB_PASSWORD'];
 
 $db = new PDO("pgsql:host=$database_host;port=$database_port;dbname=$database_name;user=$database_user;password=$database_password");
 
