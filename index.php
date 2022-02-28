@@ -3,8 +3,9 @@ require __DIR__ . '/vendor/autoload.php';
 require(__DIR__ . '/views/header.php');
 require(__DIR__ . '/functions.php');
 
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
-$dotenv->load();
+
+// $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+// $dotenv->load();
 
 $database_host = $_ENV['DB_HOST'];
 $database_name = $_ENV['DB_NAME'];
